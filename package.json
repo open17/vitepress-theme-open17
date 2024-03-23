@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "vitepress": "^1.0.1"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  }
+}
