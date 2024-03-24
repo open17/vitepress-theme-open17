@@ -4,7 +4,7 @@
 
 支持**全部**vitepress配置项与默认主题功能,相关配置请见[官方文档](https://vitepress.dev/)
 
-在模拟主题的基础上加入了简洁美观的博客功能
+本主题在默认主题的基础上加入了简洁美观的博客功能
 
 预览地址: [vitepress-theme-open17](https://vitepress-theme-open17.vercel.app/)
 
