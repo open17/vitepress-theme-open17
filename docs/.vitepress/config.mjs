@@ -5,11 +5,30 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Vitepress Open17",
   description: "A VitePress Site",
+  markdown: {
+    math: true
+  },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local'
+    },
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
+    blog:{
+      img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011548000.png',
+      title:"Open17's Blog",
+      desc:"Hello,world"
+    },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      {text:'tags',link:'/page/tags'},
+      {text:'archive',link:' /page/archive'},
+      {text:'docs',link:'/page/docs'}
     ],
     sidebar: {
       '/example/': [

@@ -1,7 +1,7 @@
 ---
-layout: page
-title: 哈哈哈哈哈
+title: 我的第一篇博客
 author: open17
+date: 2024-03-23
 ---
 
 # Hello World
