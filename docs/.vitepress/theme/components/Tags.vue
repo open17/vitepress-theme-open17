@@ -1,6 +1,6 @@
 <template>
     <div class="flex mt-20 justify-center items-center flex-col gap-20 mx-20 w-auto">
-        <div class="text-3xl mt-5">Tags - <span class="text-3xl">{{ ActiveTag == '' ? 'All' : ActiveTag }}</span> </div>
+        <div class="text-3xl mt-5 font-bold">Tags - <span class="text-3xl">{{ ActiveTag == '' ? 'All' : ActiveTag }}</span> </div>
         <!-- tags list -->
         <div class="flex justify-center items-center flex-wrap mx-20 gap-4">
             <span v-for="(num, tag) in Tags" :key="tag"
