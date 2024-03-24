@@ -1,19 +1,11 @@
 ---
 title: 我的第一篇博客
-author: open17
 date: 2024-03-23
 ---
 
-# Hello World
+Hello World
 
-{{site}}
+---
 
-{{frontmatter}}
+这是我的第一篇`vitepress-theme-open17`的博客
 
-
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { site,frontmatter } = useData()
-</script>
