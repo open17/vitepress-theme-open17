@@ -13,7 +13,7 @@ hero:
       link: /example/markdown-examples
     - theme: alt
       text: Blog
-      link: /blog
+      link: /
 
 features:
   - title: Feature A
