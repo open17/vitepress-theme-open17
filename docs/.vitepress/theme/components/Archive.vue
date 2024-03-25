@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full flex-col gpa-5 justify-center items-center">
+  <div class="flex w-full flex-col justify-center items-center">
     <div class="text-5xl mt-32 font-bold">Archive</div>
     <!-- 博客文章 -->
     <div class="flex mt-10 justify-center items-center">

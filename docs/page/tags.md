@@ -1,4 +1,4 @@
 ---
-blog: tags
+layout: tags
 lastUpdated: false
 ---

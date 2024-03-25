@@ -1,8 +1,5 @@
 <template>
-    <Blog v-if="frontmatter.blog && frontmatter.blog === 'home'" />
-    <Archive v-else-if="frontmatter.blog && frontmatter.blog === 'archive'" />
-    <Tags v-else-if="frontmatter.blog && frontmatter.blog === 'tags'" />
-    <Layout :class="{ 'blog-home': frontmatter.blog && frontmatter.blog === 'home','blog':frontmatter.blog }">
+    <Layout :class="{ 'blog-home': frontmatter.layout && frontmatter.layout === 'blog'}">
         <template #doc-before>
             <div class="text-3xl font-bold">{{ frontmatter.title }}</div>
         </template>
@@ -12,9 +9,6 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import { useData } from "vitepress";
-import Blog from './Blog.vue';
-import Archive from './Archive.vue';
-import Tags from './Tags.vue';
 const { frontmatter } = useData()
 const { Layout } = DefaultTheme
 </script>
@@ -30,8 +24,5 @@ const { Layout } = DefaultTheme
 .blog-home {
     --vp-nav-bg-color: transparent;
     --vp-c-gutter: transparent;
-}
-.blog{
-    min-height:0 !important; 
 }
 </style>

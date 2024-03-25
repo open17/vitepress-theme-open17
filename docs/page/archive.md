@@ -1,4 +1,4 @@
 ---
-blog: archive
+layout: archive
 lastUpdated: false
 ---

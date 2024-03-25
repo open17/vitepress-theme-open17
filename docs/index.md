@@ -1,4 +1,4 @@
 ---
-blog: home
+layout: blog
 lastUpdated: false
 ---

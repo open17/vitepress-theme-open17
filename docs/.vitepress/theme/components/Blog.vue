@@ -1,7 +1,7 @@
 <script setup>
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
-const { frontmatter, theme,isDark } = useData()
+const { frontmatter, theme, isDark } = useData()
 const scrollDown = () => {
     window.scrollTo({
         top: window.innerHeight,
@@ -11,10 +11,10 @@ const scrollDown = () => {
 </script>
 
 <template>
-    <div class="flex w-full flex-col gpa-5  justify-center items-center">
+    <div class="flex w-full flex-col gpa-5  justify-center items-center pt-0">
         <!-- 首页大图 -->
         <div class="w-full h-screen bg-fixed bg-cover bg-center flex justify-center items-center flex-col gap-16 relative"
-            :style="{ 'background-image': `url(${isDark?theme.blog.imgDark:theme.blog.img})` }">
+            :style="{ 'background-image': `url(${isDark ? theme.blog.imgDark : theme.blog.img})` }">
             <div class=" text-5xl font-bold">{{ theme.blog.title }}</div>
             <div class=" text-3xl">{{ theme.blog.desc }}</div>
             <!-- 下滑图标 -->
@@ -49,3 +49,9 @@ const scrollDown = () => {
     </div>
 
 </template>
+
+<style>
+.blog-home .VPContent {
+    padding-top: 0 !important;
+}
+</style>
