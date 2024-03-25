@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./theme/index.mjs",
+    "./config": "./theme/config.mjs"
+  },
+  "license": "Apache-2.0",
+  "author": "open17 <opensci@163.com>",
+  "name": "vitepress-theme-open17",
+  "repository": "https://github.com/open17/vuepress-theme-open17.git",
+  "scripts": {
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.1"
+  }
+}

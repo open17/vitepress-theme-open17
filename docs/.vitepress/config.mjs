@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import baseConfig from './theme/config.mjs'
+import baseConfig from 'vitepress-theme-open17/config'
 
 export default defineConfig({
   extends: baseConfig,
