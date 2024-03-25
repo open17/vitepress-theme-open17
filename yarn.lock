@@ -954,6 +954,11 @@ vite@^5.2.2:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vitepress-theme-open17@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vitepress-theme-open17/-/vitepress-theme-open17-0.0.1.tgz#97ffbfa116048569289c1032b95df36c92121ef1"
+  integrity sha512-KQfTEsuIDrB9PBiTf+qWhNzsJghUV0181qUcyYzdoW/UeFgqnxXlbWdd6yuB+6YLCAWrwx4LwM4FVd+O4EjUBw==
+
 vitepress@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.0.1.tgz#828fe140d5f4975154845b31e97437f035a36c69"
