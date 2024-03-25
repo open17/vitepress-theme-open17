@@ -18,7 +18,34 @@
 
 
 ## 快速开始
+
+### 使用模板
+
 直接克隆本主题的[github template](https://github.com/open17/vitepress-theme-open17)即可快速开始
+
+### 手动安装与配置
+
+```shell
+yarn add vitepress-theme-open17
+```
+
+然后使用主题
+```js
+//.vitepress/theme/index.js
+import Theme from 'vitepress-theme-open17'
+export default Theme
+```
+
+同时主题也提供了基本配置,你也可以在`config.js`中进行引用
+```js
+// .vitepress/config.js
+import { defineConfig } from 'vitepress'
+import baseConfig from 'vitepress-theme-open17/config'
+
+export default defineConfig({
+  extends: baseConfig,
+})
+```
 
 ## 博客使用
 

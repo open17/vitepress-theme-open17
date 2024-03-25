@@ -1,8 +1,13 @@
+
+<p align="center">
+<a href="https://www.npmjs.com/package/vitepress-theme-open17" target="_blank"><img src="https://img.shields.io/npm/v/vitepress-theme-open17.svg?style=flat-square&amp;logo=npm" alt="npm" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/tree/v0" target="_blank"><img src="https://img.shields.io/badge/GitHub-open17-26A2FF?style=flat-square&amp;logo=github" alt="github" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/blob/template/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="license" style="display: inline; margin: 0px;"></a><br/>
+一款简单美观的博客主题,继承于vitepress默认主题
+</p>
+
 # vitepress-theme-open17
 
-一款简单美观的博客主题,继承于vitepress默认主题
+预览与文档: [vitepress-theme-open17](https://vitepress-theme-open17.vercel.app/)
 
-预览地址: [vitepress-theme-open17](https://vitepress-theme-open17.vercel.app/)
 
 ## 特征
 
@@ -12,7 +17,34 @@
 
 ## 快速开始
 
+### 使用模板
+
 直接克隆本主题的[github template](https://github.com/open17/vitepress-theme-open17)即可快速开始
+
+### 手动安装与配置
+
+```shell
+yarn add vitepress-theme-open17
+```
+
+然后使用主题
+```js
+//.vitepress/theme/index.js
+import Theme from 'vitepress-theme-open17'
+export default Theme
+```
+
+同时主题也提供了基本配置,你也可以在`config.js`中进行引用
+```js
+// .vitepress/config.js
+import { defineConfig } from 'vitepress'
+import baseConfig from 'vitepress-theme-open17/config'
+
+export default defineConfig({
+  extends: baseConfig,
+})
+```
+
 
 ## 博客使用
 
@@ -94,15 +126,21 @@ layout: archive
 
 ## 预期更新
 
-- [ ] tags采用动态路由
-- [ ] 分页
-- [ ] 独立出主题部分发布npm
-- [ ] markdown-it增强
-- [ ] 移动端优化
+- [x] 博客首页
 - [ ] 博客评论系统
 - [ ] RSS订阅
-- [ ] 置顶
+- [x] 标签页
+- [x] 归档页
+- [x] 文章注入title
+- [x] 自动引入博客
+- [ ] 置顶博客
+- [ ] tags采用动态路由
+- [ ] 分页
+- [x] 独立出主题部分发布npm
+- [ ] markdown-it增强
+- [ ] 移动端优化
+-
 
 ## 最后
 
-如果觉得这个主题不错,欢迎star,欢迎pr
+如果觉得这个主题不错的话,欢迎给我一个star,你的支持是我更新的动力!
