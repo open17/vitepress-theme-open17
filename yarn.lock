@@ -954,10 +954,21 @@ vite@^5.2.2:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitepress-theme-open17@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vitepress-theme-open17/-/vitepress-theme-open17-0.0.1.tgz#97ffbfa116048569289c1032b95df36c92121ef1"
-  integrity sha512-KQfTEsuIDrB9PBiTf+qWhNzsJghUV0181qUcyYzdoW/UeFgqnxXlbWdd6yuB+6YLCAWrwx4LwM4FVd+O4EjUBw==
+vite@^5.2.6:
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-5.2.6.tgz#fc2ce309e0b4871e938cb0aca3b96c422c01f222"
+  integrity sha512-FPtnxFlSIKYjZ2eosBQamz4CbyrTizbZ3hnGJlh/wMtCrlp1Hah6AzBLjGI5I2urTfNnpovpHdrL6YRuBOPnCA==
+  dependencies:
+    esbuild "^0.20.1"
+    postcss "^8.4.36"
+    rollup "^4.13.0"
+  optionalDependencies:
+    fsevents "~2.3.3"
+
+vitepress-theme-open17@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vitepress-theme-open17/-/vitepress-theme-open17-0.0.4.tgz#a033f517de8b3acf73b46558e7b74af087d4ff5a"
+  integrity sha512-5J9idnarBD8JXTzsTarDM246E1bVyGhEGNEfCpLPQsZUYj4BIIPZ3whSbRgt8AN2+Rmfsr7Ntiw0ExWb+oiw0A==
 
 vitepress@^1.0.1:
   version "1.0.1"

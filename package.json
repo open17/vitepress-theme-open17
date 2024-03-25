@@ -9,7 +9,10 @@
     "preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
     "markdown-it-mathjax3": "^4.3.2",
-    "vitepress-theme-open17": "^0.0.1"
+    "vite": "^5.2.6",
+    "vitepress-theme-open17": "^0.0.4",
+    "vue": "^3.4.21"
   }
 }

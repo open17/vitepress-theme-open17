@@ -1,5 +1,5 @@
-import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
+import { type EnhanceAppContext } from 'vitepress'
 import MyLayout from './components/MyLayout.vue'
 
 import Blog from './components/Blog.vue';
@@ -12,7 +12,7 @@ import './style.css'
 export default {
   extends: DefaultTheme,
   Layout: MyLayout,
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app, router, siteData }:EnhanceAppContext) {
     app.component('blog', Blog);
     app.component('archive', Archive);
     app.component('tags', Tags);
