@@ -59,31 +59,35 @@ themeConfig:{
 ```
 
 
-### 博客主页
+### 博客布局
+
+用于配置博客页面
+
+#### 博客主页
 在要作为博客主页的markdown页面加入,推荐在`index.md`中配置
 ```md
 
 ---
-blog: home
+layout: blog
 
 ---
 ```
 
-### 博客标签页
+#### 博客标签页
 
 在要作为博客标签页的markdown页面加入
 ```md
 ---
-blog: tags
+layout: tags
 
 ---
 ```
 
-### 博客归档页
+#### 博客归档页
 在要作为博客归档页的markdown页面加入
 ```md
 ---
-blog: archive
+layout: archive
 
 ---
 ```
@@ -94,3 +98,10 @@ blog: archive
 - [ ] 分页
 - [ ] 独立出主题部分发布npm
 - [ ] markdown-it增强
+- [ ] 移动端优化
+- [ ] 博客评论系统
+- [ ] RSS订阅
+
+## 最后
+
+如果觉得这个主题不错,欢迎star,欢迎pr
