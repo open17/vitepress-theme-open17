@@ -2,8 +2,8 @@
   "type": "module",
   "version": "0.0.1",
   "exports": {
-    ".": "./theme/index.mjs",
-    "./config": "./theme/config.mjs"
+    ".": "./libs/index.mjs",
+    "./config": "./libs/config.mjs"
   },
   "license": "Apache-2.0",
   "author": "open17 <opensci@163.com>",
