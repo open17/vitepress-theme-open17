@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "exports": {
     ".": "./libs/index.mjs",
     "./config": "./libs/config.mjs"
@@ -11,6 +11,11 @@
   "repository": "https://github.com/open17/vuepress-theme-open17.git",
   "scripts": {},
   "peerDependencies": {
+    "vitepress": "^1.0.1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.6",
     "vitepress": "^1.0.1"
   }
 }
