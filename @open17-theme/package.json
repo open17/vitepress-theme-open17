@@ -1,21 +1,22 @@
 {
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "exports": {
-    ".": "./libs/index.mjs",
+    ".": "./libs/index.ts",
     "./config": "./libs/config.mjs"
   },
+  "main": "./libs/index.ts",
   "license": "Apache-2.0",
   "author": "open17 <opensci@163.com>",
   "name": "vitepress-theme-open17",
   "repository": "https://github.com/open17/vuepress-theme-open17.git",
-  "scripts": {},
   "peerDependencies": {
     "vitepress": "^1.0.1"
   },
-  "dependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.2.6",
-    "vitepress": "^1.0.1"
-  }
+  "keywords": [
+    "vitepress",
+    "vitepress theme",
+    "blog theme",
+    "vitepress blog"
+  ]
 }
