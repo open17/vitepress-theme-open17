@@ -1,5 +1,5 @@
 <template>
-    <Layout :class="{ 'blog-home': frontmatter.layout && frontmatter.layout === 'blog' }" v-if="!isLoading">
+    <Layout :class="{ 'blog-home': isBlogTop&&frontmatter.layout === 'blog' }" v-if="!isLoading">
         <template #doc-before>
             <div class="text-3xl font-bold">{{ frontmatter.title }}</div>
         </template>
@@ -9,23 +9,26 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import { useData } from "vitepress";
-import { onMounted,ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import '../../tailwind'
+
+const { frontmatter } = useData();
+const { Layout } = DefaultTheme;
+
 const isLoading = ref(true);
+const isBlogTop = ref(frontmatter.value.layout === 'blog');
+
 onMounted(() => {
-    let scriptElement = document.createElement('script');
-    scriptElement.src = "https://cdn.tailwindcss.com";
-    document.head.appendChild(scriptElement);
-    scriptElement.onload = function () {
-        console.log("Script loaded successfully");  
-        isLoading.value = false;
-    };
+    isLoading.value = false;
+    if (frontmatter.value.layout === 'blog') {
+        window.addEventListener('scroll', updateIsBlogTop);
+    }
 });
 
-const { frontmatter } = useData()
-const { Layout } = DefaultTheme
-
+function updateIsBlogTop() {
+    isBlogTop.value = window.scrollY <= 50;
+}
 </script>
-
 
 <style>
 @tailwind base;
