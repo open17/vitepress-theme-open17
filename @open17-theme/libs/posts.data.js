@@ -9,7 +9,13 @@ export default createContentLoader('posts/**/*.md', {
     // 根据需要对原始数据进行 map、sort 或 filter
     // 最终的结果是将发送给客户端的内容
     return rawData.sort((a, b) => {
-      return +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
+      if (a.frontmatter.pin && !b.frontmatter.pin) {
+        return -1;
+      }
+      if (!a.frontmatter.pin && b.frontmatter.pin) {
+        return 1;
+      }
+      return +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date) 
     }).map((page) => {
       return {
         frontmatter: page.frontmatter,
