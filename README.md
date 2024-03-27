@@ -51,7 +51,7 @@ export default defineConfig({
 本主题会把`posts`文件夹下的所有md文件作为博客文章,并生成对应的博客链接
 一个博客文章必须提供的有title和date字段,title为文章标题,date为文章创建时间,格式为`YYYY-MM-DD`
 
-可选的字段是tags,同时支持excerpt(摘要),下面是一个简单的示例:
+可选的字段是tags,pin(置顶),同时支持excerpt(摘要),下面是一个简单的示例:
 
 ```md
 ---
@@ -61,6 +61,7 @@ tags:
     - hello world
     - 标签1
 
+pin: true
 ---
 
 Hello World
@@ -133,13 +134,13 @@ layout: archive
 - [x] 归档页
 - [x] 文章注入title
 - [x] 自动引入博客
-- [ ] 置顶博客
+- [x] 置顶博客
 - [ ] tags采用动态路由
 - [ ] 分页
 - [x] 独立出主题部分发布npm
 - [ ] markdown-it增强
-- [ ] 移动端优化
--
+- [x] 移动端优化
+- [x] cdn资源转本地
 
 ## 最后
 
