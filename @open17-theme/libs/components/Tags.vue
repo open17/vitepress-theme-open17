@@ -1,8 +1,8 @@
 <template>
-    <div class="flex mt-20 justify-center items-center flex-col gap-20 mx-20 w-auto mb-20">
+    <div class="flex mt-20 justify-center items-center flex-col gap-20 mx-5 md:mx-20 w-auto mb-20">
         <div class="text-3xl mt-5 font-bold">Tags - <span class="text-3xl">{{ ActiveTag == '' ? 'All' : ActiveTag }}</span> </div>
         <!-- tags list -->
-        <div class="flex justify-center items-center flex-wrap mx-20 gap-4">
+        <div class="flex justify-center items-center flex-wrap md:mx-20 md:gap-4 gap-2">
             <span v-for="(num, tag) in Tags" :key="tag"
                 class="px-4 py-1 rounded-md m-2 cursor-pointer border-2 tag relative" @click="ActiveTag = tag">
                 {{ tag == '' ? 'All' : tag }}
@@ -12,8 +12,8 @@
         </div>
         <div class="text-2xl w-full text-center border-dashed border-t-2 pt-5"></div>
         <!--  posts with tags-->
-        <div class="flex justify-center  flex-col gap-5">
-            <div class="flex justify-between gap-20" v-for="post in filteredList" :key="post.url">
+        <div class="flex justify-center  flex-col gap-10  md:gap-5">
+            <div class="flex items-center gap-2 flex-col md:flex-row md:gap-20 md:justify-between" v-for="post in filteredList" :key="post.url">
                 <a :href="withBase(post.url)" class="hover:underline">{{ post.frontmatter.title }}</a>
                 <div class="flex justify-end items-end gap-2">
                     <span class="text-[var(--vp-c-indigo-1)] cursor-pointer hover:underline underline-offset-4"
