@@ -2,21 +2,17 @@
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
 import { computed, ref } from 'vue';
-const { frontmatter, theme, isDark } = useData()
+const { theme, isDark } = useData()
 const scrollDown = () => {
     window.scrollTo({
         top: window.innerHeight,
         behavior: 'smooth'
     })
 }
-
+let pageSize = 5;
 // 分页功能
-let pageSize
-if (theme.blog && theme.blog.pageSize) {
-    pageSize = theme.blog.pageSize;
-}
-else {
-    pageSize = 5;
+if (theme.value.blog && theme.value.blog.pageSize) {
+    pageSize = theme.value.blog.pageSize;
 }
 const total = posts.length;
 const currentPage = ref(1);
@@ -74,11 +70,12 @@ const changePage = (curr) => {
                 </div>
             </a>
             <div class="flex justify-center items-center gap-2">
-                <span @click="changePage(i)" v-for="i in totalPage" v-if="totalPage>1"
-                    class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]" :class="{
-                        'bg-[var(--vp-c-indigo-1)] text-white': i === currentPage,
-                        'bg-transparent': i !== currentPage,
-                    }">{{ i }}</span>
+                <span @click="changePage(i)" v-for="i in totalPage" v-if="totalPage > 1"
+                    class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]"
+                    :class="{
+                'bg-[var(--vp-c-indigo-1)] text-white': i === currentPage,
+                'bg-transparent': i !== currentPage,
+            }">{{ i }}</span>
             </div>
         </div>
     </div>
