@@ -87,7 +87,8 @@ themeConfig:{
       imgDark:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011548000.png',  //博客首页图片(暗黑模式)
       img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403241444361.png',     //博客首页图片(正常模式)
       title:"Open17's Blog",        //博客首页标题
-      desc:"Hello,world"            //博客首页描述
+      desc:"Hello,world" ,          //博客首页描述
+      pageSize:10,                  //每页显示文章数量,默认为19
     },
 }
 ```

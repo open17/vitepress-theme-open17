@@ -18,9 +18,9 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'tags', link: '/page/tags' },
-      { text: 'archive', link: ' /page/archive' },
-      { text: 'docs', link: '/page/docs' }
+      { text: 'Tags', link: '/page/tags' },
+      { text: 'Archive', link: ' /page/archive' },
+      { text: 'Docs', link: '/page/docs' }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/open17/vitepress-theme-open17/' }
