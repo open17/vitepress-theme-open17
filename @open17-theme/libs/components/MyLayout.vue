@@ -20,11 +20,9 @@ onMounted(() => {
     import('../../tailwind').then(() => {
         isLoading.value = false;
     })
-    if (frontmatter.value.layout === 'blog') {
-        window.addEventListener('scroll', () => {
-            isBlogTop.value = window.scrollY <= 50;
-        });
-    }
+    window.addEventListener('scroll', () => {
+        isBlogTop.value = window.scrollY <= 50;
+    });
 });
 </script>
 
