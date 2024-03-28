@@ -1,9 +1,10 @@
 <template>
-    <Layout :class="{ 'blog-home': isBlogTop && frontmatter.layout === 'blog' }" v-if="!isLoading">
+    <Layout :class="{ 'blog-home': isBlogTop && frontmatter.layout === 'blog' }" v-show="!isLoading">
         <template #doc-before>
             <div class="text-3xl font-bold">{{ frontmatter.title }}</div>
         </template>
     </Layout>
+    <div class="absolute z-0 top-0 max-w-0 max-h-0" v-if="!isLoading"></div>
 </template>
 
 <script setup>
