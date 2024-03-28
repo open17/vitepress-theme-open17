@@ -1,4 +1,6 @@
-
+<p align="center">
+<img src="https://www.open17.vip/logo.png" width="250"/>
+</p>
 <p align="center">
 <a href="https://www.npmjs.com/package/vitepress-theme-open17" target="_blank"><img src="https://img.shields.io/npm/v/vitepress-theme-open17.svg?style=flat-square&amp;logo=npm" alt="npm" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/tree/v0" target="_blank"><img src="https://img.shields.io/badge/GitHub-open17-26A2FF?style=flat-square&amp;logo=github" alt="github" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/blob/template/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="license" style="display: inline; margin: 0px;"></a><br/>
 一款简单美观的博客主题,继承于vitepress默认主题
@@ -6,7 +8,8 @@
 
 # vitepress-theme-open17
 
-预览与文档: [vitepress-theme-open17](https://vitepress-theme-open17.vercel.app/)
+## Documentation
+To check out docs, visit [vitepress-theme-open17](https://vitepress-theme-open17.vercel.app/)
 
 
 ## 特征
@@ -14,6 +17,26 @@
 - 开箱即用: 继承vitepress默认主题,无需额外更改原本配置,支持默认主题全部功能
 - 博客增强: 支持标签分类,摘要,归档,博客封面等常见功能
 - 轻松配置: 自动生成博客文章无需额外配置,博客功能页配置清晰简单
+
+## 预期更新
+
+- [x] 博客首页
+- [ ] 博客评论系统
+- [ ] RSS订阅
+- [x] 标签页
+- [x] 归档页
+- [x] 文章注入title
+- [x] 自动引入博客
+- [x] 置顶博客
+- [ ] tags采用动态路由
+- [x] 分页
+- [x] 独立出主题部分发布npm
+- [ ] markdown-it增强
+- [x] 移动端优化
+- [x] cdn资源转本地
+
+
+如果觉得这个主题不错的话,欢迎给我一个star,你的支持是我更新的动力!
 
 ## 快速开始
 
@@ -124,24 +147,3 @@ layout: archive
 
 ---
 ```
-
-## 预期更新
-
-- [x] 博客首页
-- [ ] 博客评论系统
-- [ ] RSS订阅
-- [x] 标签页
-- [x] 归档页
-- [x] 文章注入title
-- [x] 自动引入博客
-- [x] 置顶博客
-- [ ] tags采用动态路由
-- [x] 分页
-- [x] 独立出主题部分发布npm
-- [ ] markdown-it增强
-- [x] 移动端优化
-- [x] cdn资源转本地
-
-## 最后
-
-如果觉得这个主题不错的话,欢迎给我一个star,你的支持是我更新的动力!
