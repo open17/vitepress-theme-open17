@@ -136,7 +136,7 @@ layout: archive
 - [x] 自动引入博客
 - [x] 置顶博客
 - [ ] tags采用动态路由
-- [ ] 分页
+- [x] 分页
 - [x] 独立出主题部分发布npm
 - [ ] markdown-it增强
 - [x] 移动端优化
