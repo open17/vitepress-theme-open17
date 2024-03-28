@@ -1,6 +1,7 @@
 <script setup>
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
+import { computed, ref } from 'vue';
 const { frontmatter, theme, isDark } = useData()
 const scrollDown = () => {
     window.scrollTo({
@@ -8,6 +9,27 @@ const scrollDown = () => {
         behavior: 'smooth'
     })
 }
+
+// 分页功能
+let pageSize
+if (theme.blog && theme.blog.pageSize) {
+    pageSize = theme.blog.pageSize;
+}
+else {
+    pageSize = 5;
+}
+const total = posts.length;
+const currentPage = ref(1);
+const totalPage = computed(() => Math.ceil(total / pageSize));
+const paginatedPosts = computed(() => {
+    const start = (currentPage.value - 1) * pageSize;
+    const end = start + pageSize;
+    return posts.slice(start, end);
+})
+const changePage = (curr) => {
+    currentPage.value = curr;
+}
+
 </script>
 
 <template>
@@ -27,13 +49,14 @@ const scrollDown = () => {
         <!-- 博客文章 -->
         <div class="flex mt-20 justify-center items-center gap-5 flex-col w-full">
             <a :href="withBase(post.url)" class="w-full flex justify-center items-center relative"
-                v-for="post of posts">
+                v-for="post of paginatedPosts">
 
                 <div
                     class="flex justify-center items-start border-2 rounded-lg min-h-32 w-full md:w-7/12 flex-col gap-4 px-5 md:px-16 py-6">
                     <div class="text-2xl hover:underline underline-offset-4 text-center flex items-center gap-1"><svg
                             v-if="post.frontmatter.pin" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--vp-c-indigo-1)]">
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="w-6 h-6 text-[var(--vp-c-indigo-1)]">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
                         </svg>
@@ -50,9 +73,13 @@ const scrollDown = () => {
                     </div>
                 </div>
             </a>
-            <!-- <div class="flex justify-center items-center gap-2">
-                <span v-for="i in 5" class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer">{{ i }}</span>
-            </div> -->
+            <div class="flex justify-center items-center gap-2">
+                <span @click="changePage(i)" v-for="i in totalPage" v-if="totalPage>1"
+                    class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]" :class="{
+                        'bg-[var(--vp-c-indigo-1)] text-white': i === currentPage,
+                        'bg-transparent': i !== currentPage,
+                    }">{{ i }}</span>
+            </div>
         </div>
     </div>
 
