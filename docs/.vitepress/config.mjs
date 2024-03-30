@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import baseConfig from 'vitepress-theme-open17/config'
+import { genFeed } from 'vitepress-theme-open17/genFeed'
 
 export default defineConfig({
   extends: baseConfig,
@@ -8,6 +9,12 @@ export default defineConfig({
   },
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
   themeConfig: {
+    feed: {
+      baseUrl: "https://www.open17.vip",
+      copyright:"Copyright © 2023-present open17",
+      image:"https://www.open17.vip/logo.png",
+      favicon:"https://www.open17.vip/logo.ico"
+    },
     logo: '/logo.png',
     lastUpdated: {
       text: 'Updated at',
@@ -42,5 +49,6 @@ export default defineConfig({
         }
       ],
     },
-  }
+  },
+  buildEnd: genFeed,
 })

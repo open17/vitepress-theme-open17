@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "feed": "^4.2.2",
     "markdown-it-mathjax3": "^4.3.2",
     "vite": "^5.2.6",
-    "vitepress-theme-open17": "^0.0.8",
+    "vitepress-theme-open17": "^0.0.9",
     "vue": "^3.4.21"
   }
 }
