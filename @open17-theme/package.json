@@ -9,7 +9,8 @@
   "license": "Apache-2.0",
   "author": "open17 <opensci@163.com>",
   "name": "vitepress-theme-open17",
-  "repository": "https://github.com/open17/vuepress-theme-open17.git",
+  "repository": "https://github.com/open17/vitepress-theme-open17.git",
+  "homepage": "https://vitepress.open17.vip",
   "peerDependencies": {
     "vitepress": "^1.0.1"
   },
