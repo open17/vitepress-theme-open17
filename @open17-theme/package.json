@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "exports": {
     ".": "./libs/index.ts",
     "./config": "./libs/config.mjs",
