@@ -27,7 +27,7 @@ const changePage = (curr) => {
 }
 
 //首页图片
-const defaultImg=''
+const defaultImg = ''
 let lightImg = defaultImg;
 let darkImg;
 
@@ -105,14 +105,14 @@ watch(isDark, () => {
                     </div>
                 </div>
             </a>
-            <div class="flex justify-center items-center gap-2">
-                <span @click="changePage(i)" v-for="i in totalPage" v-if="totalPage > 1"
-                    class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]"
-                    :class="{
+        </div>
+        <div class="flex justify-center items-center gap-2 border-0 flex-row mt-5">
+            <div @click="changePage(i)" v-for="i in totalPage" v-if="totalPage > 1"
+                class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]"
+                :class="{
                 'bg-[var(--vp-c-indigo-1)] text-white': i === currentPage,
                 'bg-transparent': i !== currentPage,
-            }">{{ i }}</span>
-            </div>
+            }">{{ i }}</div>
         </div>
     </div>
 
