@@ -1,7 +1,7 @@
 <script setup>
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted, watch } from 'vue';
 const { theme, isDark } = useData()
 const scrollDown = () => {
     window.scrollTo({
@@ -26,13 +26,49 @@ const changePage = (curr) => {
     currentPage.value = curr;
 }
 
+//首页图片
+const defaultImg=''
+let lightImg = defaultImg;
+let darkImg;
+
+const homeImg = ref('');
+if (theme.value.blog) {
+    if (theme.value.blog.img) {
+        lightImg = theme.value.blog.img;
+    }
+    if (theme.value.blog.imgDark) {
+        darkImg = theme.value.blog.imgDark;
+    }
+    else {
+        darkImg = lightImg;
+    }
+}
+
+onMounted(() => {
+    updateHomeImg()
+})
+
+const updateHomeImg = () => {
+    if (isDark.value) {
+        homeImg.value = darkImg;
+    }
+    else {
+        homeImg.value = lightImg;
+    }
+}
+
+watch(isDark, () => {
+    updateHomeImg();
+});
+
+
 </script>
 
 <template>
     <div class="flex w-full flex-col gpa-5  justify-center items-center pt-0 mb-10">
         <!-- 首页大图 -->
         <div class="w-full h-screen bg-fixed bg-cover bg-center flex justify-center items-center flex-col gap-16 relative"
-            :style="{ 'background-image': `url(${isDark ? theme.blog.imgDark : theme.blog.img})` }">
+            :style="{ 'background-image': `url(${homeImg})` }">
             <div class=" text-5xl font-bold">{{ theme.blog.title }}</div>
             <div class=" text-3xl">{{ theme.blog.desc }}</div>
             <!-- 下滑图标 -->
