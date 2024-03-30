@@ -22,7 +22,7 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress-theme-open17
 
 - [x] 博客首页
 - [ ] 博客评论系统
-- [ ] RSS订阅
+- [x] RSS订阅
 - [x] 标签页
 - [x] 归档页
 - [x] 文章注入title
@@ -68,6 +68,25 @@ export default defineConfig({
 })
 ```
 
+同时这里现在支持RSS配置,可以通过一下设置配置RSS
+```js
+// .vitepress/config.js
+import { genFeed } from 'vitepress-theme-open17/genFeed'
+export default defineConfig({
+  //...
+  themeConfig: {
+    // ...
+    feed: {
+      baseUrl: "https://www.open17.vip", // 你的部署的域名,必须
+      copyright:"Copyright © 2023-present open17", //版权声明,可选
+      image:"https://www.open17.vip/logo.png", // RSS图片,可选
+      favicon:"https://www.open17.vip/logo.ico" //RSS图标,可选
+    },
+  },
+  buildEnd: genFeed,
+})
+
+```
 
 ## 博客使用
 
