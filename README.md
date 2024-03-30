@@ -68,7 +68,7 @@ export default defineConfig({
 })
 ```
 
-同时这里现在支持RSS配置,可以通过一下设置配置RSS
+同时这里现在支持RSS配置,可以通过一下设置配置RSS,RSS会把所有博客文章引入
 ```js
 // .vitepress/config.js
 import { genFeed } from 'vitepress-theme-open17/genFeed'
@@ -87,6 +87,7 @@ export default defineConfig({
 })
 
 ```
+然后RSS的地址为`你的域名+/feed.rss`,比如[本主题文档的RSS](https://vitepress.open17.vip/feed.rss)
 
 ## 博客使用
 
