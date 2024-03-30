@@ -11,21 +11,21 @@ hero:
     alt: open17
   actions:
     - theme: brand
-      text: 博客文档
+      text: 主题文档
       link: /blog-docs/
+    - theme: brand
+      text: 博客Demo
+      link: /page/demo
     - theme: alt
-      text: 示例文档
-      link: /example/markdown-examples
-    - theme: alt
-      text: Github
-      link: https://github.com/open17/vitepress-theme-open17
+      text: Vitepress文档
+      link: https://vitepress.dev/
 
 features:
   - title: 开箱即用
-    details: 继承vitepress默认主题,无需额外更改配置,支持默认主题全部功能
+    details: 继承vitepress默认主题,无需额外更改配置,支持默认主题全部功能,同时提供默认博客主题配置
   - title: 博客增强
-    details: 支持标签分类,摘要,归档,博客封面等常见功能
-  - title: 轻松配置
-    details: 自动生成博客文章无需额外配置,博客功能页配置清晰简单
+    details: 支持标签分类,摘要,归档,博客置顶,封面设置等常见博客功能
+  - title: 轻松使用
+    details: 自动引用文件夹生成博客文章,无需额外配置,博客功能页布局配置清晰简单
 ---
 

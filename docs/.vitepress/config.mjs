@@ -26,12 +26,18 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/open17/vitepress-theme-open17/' }
     ],
     sidebar: {
-      '/example/': [
+      '/blog-docs/': [
         {
-          text: 'Examples',
+          text: '博客文档',
           items: [
-            { text: 'Markdown Examples', link: '/example/markdown-examples' },
-            { text: 'Runtime API Examples', link: '/example/api-examples' }
+            { text: '博客配置与使用', link: '/blog-docs/' }
+          ]
+        },
+        {
+          text: '默认示例',
+          items: [
+            { text: 'Markdown Examples', link: '/blog-docs/example/markdown-examples' },
+            { text: 'Runtime API Examples', link: '/blog-docs/example/api-examples' }
           ]
         }
       ],
