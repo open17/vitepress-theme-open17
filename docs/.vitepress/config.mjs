@@ -16,8 +16,9 @@ export default defineConfig({
       favicon:"https://www.open17.vip/logo.ico"
     },
     blog:{
+      bgImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020226261.png",
       ornateStyle:true,
-      bgImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202403031455554.png"
+      bgImgDark:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011548000.png"
     },
     logo: '/logo.png',
     lastUpdated: {
@@ -54,5 +55,5 @@ export default defineConfig({
       ],
     },
   },
-  buildEnd: genFeed,
+  // buildEnd: genFeed,
 })

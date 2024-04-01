@@ -116,6 +116,7 @@ tags:
 
 pin: true
 bgImg: "xxxx" 
+bgImgDark: "xxxx"
 
 ---
 
@@ -145,6 +146,7 @@ themeConfig:{
       pageSize:5,                  //每页显示文章数量,默认为5
       ornateStyle:true,             //是否开启博客装饰样式,默认为false,
       bgImg:"xxxx",                  //doc文章(包括博客文章)的默认背景图片,可选,当博客装饰样式开启才生效
+      bgImgDark:"xxxx",            //doc文章(包括博客文章)的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
       homeBgImg:"xxxx",              //博客首页的默认背景图片,可选,当博客装饰样式开启才生效
       homeBgImgDark:"xxxx",         //博客首页的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
     },
