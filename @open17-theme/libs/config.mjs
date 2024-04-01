@@ -13,7 +13,7 @@ export default defineConfig({
             provider: 'local'
         },
         blog: {
-            homeImg: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202403241444361.png",
+            homeImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202403031455554.png",
             homeImgDark: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202403302344601.png",
             title: "Open17's Blog",
             desc: "Hello,world"

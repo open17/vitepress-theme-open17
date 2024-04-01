@@ -1,8 +1,6 @@
 <template>
     <Layout :class="{
         'blog-home': isBlogTop && frontmatter.layout === 'blog',
-        'light-post': !isDark,
-        'dark-post': isDark
     }" class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})` }"
         v-show="!isLoading">
         <template #doc-before>
@@ -18,12 +16,14 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import { useData } from "vitepress";
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 const { frontmatter, isDark, theme } = useData();
 const { Layout } = DefaultTheme;
 
 const isLoading = ref(true);
 const isBlogTop = ref(frontmatter.value.layout === 'blog');
+
+const bgImg = ref(null);
 
 onMounted(() => {
     import('../../tailwind').then(() => {
@@ -32,14 +32,25 @@ onMounted(() => {
     window.addEventListener('scroll', () => {
         isBlogTop.value = window.scrollY <= 50;
     });
+    updateImg();
 });
 
 
+
+watch(isDark, () => {
+    updateImg();
+});
+
+const updateImg = () => {
+    bgImg.value = getImg();
+}
+
 const getImg = () => {
     if (!theme.value.blog || !theme.value.blog.ornateStyle) return null;
-    if (frontmatter.value.bgImg) return frontmatter.value.bgImg;
+    if (frontmatter.value.bgImg && !isDark.value) return frontmatter.value.bgImg;
+    if (frontmatter.value.bgImgDark && isDark.value) return frontmatter.value.bgImgDark;
     if (theme.value.blog && (frontmatter.value.layout === 'docs' || !frontmatter.value.layout)) {
-        return theme.value.blog.bgImg;
+        return isDark.value?theme.value.blog.bgImgDark:theme.value.blog.bgImg;
     }
     return null;
 }
@@ -59,11 +70,11 @@ const getImg = () => {
 
 
 
-.light-post #VPContent {
-    background: #ffffffcb;
+#VPContent {
+    background: #ffffff74;
 }
 
-.dark-post #VPContent {
+.dark #VPContent {
     background: #1b1b1fc3;
 }
 
