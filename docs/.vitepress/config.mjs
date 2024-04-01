@@ -15,6 +15,12 @@ export default defineConfig({
       image:"https://www.open17.vip/logo.png",
       favicon:"https://www.open17.vip/logo.ico"
     },
+    blog:{
+      homeImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202403241444361.png",
+      homeImgDark:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202403302344601.png",
+      ornateStyle:true,
+      bgImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202403031455554.png"
+    },
     logo: '/logo.png',
     lastUpdated: {
       text: 'Updated at',

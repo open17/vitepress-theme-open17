@@ -9,10 +9,15 @@ const scrollDown = () => {
         behavior: 'smooth'
     })
 }
+
+
 let pageSize = 5;
+const blogConfig=theme.value.blog;
+
+
 // 分页功能
-if (theme.value.blog && theme.value.blog.pageSize) {
-    pageSize = theme.value.blog.pageSize;
+if (blogConfig && blogConfig.pageSize) {
+    pageSize = blogConfig.pageSize;
 }
 const total = posts.length;
 const currentPage = ref(1);
@@ -27,47 +32,64 @@ const changePage = (curr) => {
 }
 
 //首页图片
-const defaultImg = ''
-let lightImg = defaultImg;
+
+//默认图片路径
+const defaultImgUrl = '';
+
+let lightImg = defaultImgUrl;
 let darkImg;
 
+let lightBgImg='';
+let darkBgImg='';
+
+
+
 const homeImg = ref('');
-if (theme.value.blog) {
-    if (theme.value.blog.img) {
-        lightImg = theme.value.blog.img;
+const homeBgImg = ref('');
+
+
+if (blogConfig) {
+    if (blogConfig.homeImg) {
+        lightImg = blogConfig.homeImg;
     }
-    if (theme.value.blog.imgDark) {
-        darkImg = theme.value.blog.imgDark;
+    if (blogConfig.homeImgDark) {
+        darkImg = blogConfig.homeImgDark;
     }
     else {
         darkImg = lightImg;
     }
+    if (blogConfig.ornateStyle) {
+        blogConfig.homeBgImg?lightBgImg=blogConfig.homeBgImg:lightBgImg=lightImg;
+        blogConfig.homeBgImgDark?darkBgImg=blogConfig.homeBgImgDark:darkBgImg=darkImg;
+    }
 }
 
 onMounted(() => {
-    updateHomeImg()
+    updateImg()
 })
 
-const updateHomeImg = () => {
+const updateImg = () => {
     if (isDark.value) {
         homeImg.value = darkImg;
+        homeBgImg.value = darkBgImg;
     }
     else {
         homeImg.value = lightImg;
+        homeBgImg.value = lightBgImg;
     }
 }
 
 watch(isDark, () => {
-    updateHomeImg();
+    updateImg();
 });
 
 
 </script>
 
 <template>
-    <div class="flex w-full flex-col gpa-5  justify-center items-center pt-0 mb-10">
+    <div class="flex w-full flex-col justify-center items-center pt-0 my-0 ">
         <!-- 首页大图 -->
-        <div class="w-full h-screen bg-fixed bg-cover bg-center flex justify-center items-center flex-col gap-16 relative"
+        <div class="w-full h-screen bg-fixed bg-cover bg-center bg-no-repeat flex justify-center items-center flex-col gap-16 relative"
             :style="{ 'background-image': `url(${homeImg})` }">
             <div class=" text-5xl font-bold">{{ theme.blog.title }}</div>
             <div class=" text-3xl">{{ theme.blog.desc }}</div>
@@ -79,12 +101,17 @@ watch(isDark, () => {
             </svg>
         </div>
         <!-- 博客文章 -->
-        <div class="flex mt-20 justify-center items-center gap-5 flex-col w-full">
+        <div class="flex py-20 justify-center items-center gap-5 flex-col w-full bg-fixed bg-no-repeat bg-cover bg-center" :style="{ 'background-image': `url(${homeBgImg})` }"   >
             <a :href="withBase(post.url)" class="w-full flex justify-center items-center relative"
                 v-for="post of paginatedPosts">
 
                 <div
-                    class="flex justify-center items-start border-2 rounded-lg min-h-32 w-full md:w-7/12 flex-col gap-4 px-5 md:px-16 py-6">
+                    class="flex justify-center items-start rounded-lg min-h-32 w-full md:w-7/12 flex-col gap-5 px-5 md:px-16 py-6 md:py-12
+                     bg-opacity-50 backdrop-blur-sm border-2
+                    "
+                    :class="{' bg-gray-800 border-gray-500': isDark, 'border-2 bg-white': !isDark}"
+                    
+                    >
                     <div class="text-2xl hover:underline underline-offset-4 text-center flex items-center gap-1"><svg
                             v-if="post.frontmatter.pin" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -106,7 +133,7 @@ watch(isDark, () => {
                 </div>
             </a>
         </div>
-        <div class="flex justify-center items-center gap-2 border-0 flex-row mt-5">
+        <div class="flex justify-center items-center gap-2 border-0 flex-row">
             <div @click="changePage(i)" v-for="i in totalPage" v-if="totalPage > 1"
                 class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]"
                 :class="{
