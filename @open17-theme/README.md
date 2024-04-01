@@ -8,11 +8,12 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress-theme-open17
 
 
 ## Example
-### Docs Home
 ![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020048139.png)
-### Post
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020303360.png)
+
 ![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020053342.png)
-### Blog Home
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020305190.png)
+
 ![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020100666.png)
 
 
