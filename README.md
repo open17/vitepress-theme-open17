@@ -20,6 +20,7 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 
 ## 预期更新
 
+- [x] 更多样式配置
 - [x] 博客首页
 - [ ] 博客评论系统
 - [x] RSS订阅
@@ -94,7 +95,7 @@ export default defineConfig({
 本主题会把`posts`文件夹下的所有md文件作为博客文章,并生成对应的博客链接
 一个博客文章必须提供的有title和date字段,title为文章标题,date为文章创建时间,格式为`YYYY-MM-DD`
 
-可选的字段是tags,pin(置顶),同时支持excerpt(摘要),下面是一个简单的示例:
+可选的字段是tags,pin(置顶),bgImg(背景图片, ornateStyle模式开启时生效),同时支持excerpt(摘要),下面是一个简单的示例:
 
 ```md
 ---
@@ -105,6 +106,8 @@ tags:
     - 标签1
 
 pin: true
+bgImg: "xxxx" 
+
 ---
 
 Hello World
@@ -126,11 +129,15 @@ Hello World
 ```js
 themeConfig:{
     blog:{
-      imgDark:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011548000.png',  //博客首页图片(暗黑模式)
-      img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403241444361.png',     //博客首页图片(正常模式)
+      homeImgDark:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011548000.png',  //博客首页图片(暗黑模式)
+      homeImg:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403241444361.png',     //博客首页图片(正常模式)
       title:"Open17's Blog",        //博客首页标题
       desc:"Hello,world" ,          //博客首页描述
       pageSize:5,                  //每页显示文章数量,默认为5
+      ornateStyle:true,             //是否开启博客装饰样式,默认为false,
+      bgImg:"xxxx",                  //doc文章(包括博客文章)的默认背景图片,可选,当博客装饰样式开启才生效
+      homeBgImg:"xxxx",              //博客首页的默认背景图片,可选,当博客装饰样式开启才生效
+      homeBgImgDark:"xxxx",         //博客首页的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
     },
 }
 ```
@@ -142,7 +149,6 @@ themeConfig:{
 #### 博客主页
 在要作为博客主页的markdown页面加入,推荐在`index.md`中配置
 ```md
-
 ---
 layout: blog
 

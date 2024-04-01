@@ -977,10 +977,10 @@ vite@^5.2.6:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitepress-theme-open17@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/vitepress-theme-open17/-/vitepress-theme-open17-0.0.9.tgz#122ea94e4b17aba38606d07e1789947f7425b895"
-  integrity sha512-B1jD6kVqtO1xUWzCP0JIZT5/q6VF43TVyrh8b8cTinx5tiv3dVlR+YX+ljJ4wsZakE4D5nNCwPXLvqLDWIU+RA==
+vitepress-theme-open17@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/vitepress-theme-open17/-/vitepress-theme-open17-0.0.10.tgz#9198b752099cb2e5e158855219fe05cc8ab883d9"
+  integrity sha512-9dyCqAafcggr7d8KbgbutxAUaLyVqFvGyQ9ukNgP6Woj481R/LMdVL7+tvIXhaMlGOlB4sTsjC21VrykZGCTcA==
   dependencies:
     feed "^4.2.2"
 

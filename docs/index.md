@@ -1,6 +1,7 @@
 ---
 layout: home
 lastUpdated: false
+bgImg: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403302340940.png'
 
 hero:
   name: "Vitepress Open17"
