@@ -19,11 +19,12 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 - 轻松配置: 自动生成博客文章无需额外配置,博客功能页配置清晰简单
 
 ## 示例
-### 文档页
 ![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020048139.png)
-### 文章页
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020303360.png)
+
 ![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020053342.png)
-### 博客主页
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020305190.png)
+
 ![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020100666.png)
 
 
