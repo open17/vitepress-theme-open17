@@ -52,12 +52,17 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 推荐使用模版,当然也可以手动安装配置
 
 ### 使用模板一键安装
+推荐使用模版,当然也可以手动安装配置
 
+### 使用模板自动安装
+
+点击[github template](https://github.com/open17/vitepress-theme-open17/generate)即可快速开始
 点击[github template](https://github.com/open17/vitepress-theme-open17/generate)即可快速开始
 
 ### 手动安装与配置
 
 在此之前应该先[初始化vitepress项目](https://vitepress.dev/zh/guide/getting-started),然后再安装主题
+
 
 
 然后使用主题
@@ -181,6 +186,7 @@ layout: archive
 
 ---
 ```
+
 
 ## 鸣谢
 
