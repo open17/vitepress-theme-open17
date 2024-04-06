@@ -1,7 +1,5 @@
 <template>
-    <Layout :class="{
-        'blog-home': isBlogTop && frontmatter.layout === 'blog',
-    }" class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})` }"
+    <Layout  class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})` }"
         v-show="!isLoading">
         <template #doc-before>
             <div class="text-3xl font-bold">{{ frontmatter.title }}</div>
@@ -60,15 +58,6 @@ const getImg = () => {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-
-.blog-home {
-    --vp-nav-bg-color: transparent;
-    --vp-c-gutter: transparent;
-}
-
-
 
 #VPContent {
     background: #ffffff74;
