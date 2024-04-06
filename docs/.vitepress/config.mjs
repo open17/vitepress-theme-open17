@@ -13,7 +13,7 @@ export default defineConfig({
       baseUrl: "https://www.open17.vip",
       copyright:"Copyright © 2023-present open17",
       image:"https://www.open17.vip/logo.png",
-      favicon:"https://www.open17.vip/logo.ico"
+      // favicon:"https://www.open17.vip/logo.ico"
     },
     blog:{
       avatar:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061142156.webp",
