@@ -16,6 +16,7 @@ export default defineConfig({
       favicon:"https://www.open17.vip/logo.ico"
     },
     blog:{
+      avatar:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061142156.webp",
       bgImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020226261.png",
       ornateStyle:true,
       bgImgDark:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011548000.png"

@@ -18,15 +18,15 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 - 博客增强: 支持标签分类,摘要,归档,博客封面等常见功能
 - 轻松配置: 自动生成博客文章无需额外配置,博客功能页配置清晰简单
 
-## 示例
-![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020048139.png)
+## 示例图片<Badge type="tip" text="^1.0.0更新" />
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061019327.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061020261.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020048139.png)
 ![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020303360.png)
-
-![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020053342.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020053342.png)
 ![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020305190.png)
 
-![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020100666.png)
-
+如果觉得这个主题不错的话,欢迎给我一个star,你的支持是我更新的动力!
 
 ## 预期更新
 
@@ -39,27 +39,26 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 - [x] 文章注入title
 - [x] 自动引入博客
 - [x] 置顶博客
-- [ ] tags采用动态路由
 - [x] 分页
 - [x] 独立出主题部分发布npm
-- [ ] markdown-it增强
 - [x] 移动端优化
 - [x] cdn资源转本地
 
 
-如果觉得这个主题不错的话,欢迎给我一个star,你的支持是我更新的动力!
+
 
 ## 快速开始
 
-### 使用模板
+推荐使用模版,当然也可以手动安装配置
 
-直接克隆本主题的[github template](https://github.com/open17/vitepress-theme-open17)即可快速开始
+### 使用模板一键安装
+
+点击[github template](https://github.com/open17/vitepress-theme-open17/generate)即可快速开始
 
 ### 手动安装与配置
 
-```shell
-yarn add vitepress-theme-open17
-```
+在此之前应该先[初始化vitepress项目](https://vitepress.dev/zh/guide/getting-started),然后再安装主题
+
 
 然后使用主题
 ```js
@@ -98,14 +97,14 @@ export default defineConfig({
 })
 
 ```
-然后RSS的地址为`你的域名+/feed.rss`,比如[本主题文档的RSS](https://vitepress.open17.vip/feed.rss)
+然后RSS的地址为`你的域名+/feed.rss`
 
 ## 博客使用
 
 本主题会把`posts`文件夹下的所有md文件作为博客文章,并生成对应的博客链接
 一个博客文章必须提供的有title和date字段,title为文章标题,date为文章创建时间,格式为`YYYY-MM-DD`
 
-可选的字段是tags,pin(置顶),bgImg(背景图片, ornateStyle模式开启时生效),同时支持excerpt(摘要),下面是一个简单的示例:
+可选的字段是tags,pin(置顶),bgImg(背景图片, ornateStyle模式开启时生效,可用于任何页面),同时支持excerpt(摘要),下面是一个简单的示例:
 
 ```md
 ---
@@ -135,21 +134,18 @@ Hello World
 
 ## 博客配置
 
-### 主题配置
+### 主题配置<Badge type="tip" text="^1.1.0更新" />
 目前配置主要作用于博客首页
 ```js
 themeConfig:{
     blog:{
-      homeImgDark:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011548000.png',  //博客首页图片(暗黑模式)
-      homeImg:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202403241444361.png',     //博客首页图片(正常模式)
-      title:"Open17's Blog",        //博客首页标题
-      desc:"Hello,world" ,          //博客首页描述
+      title: "My Awesome Blog",   
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      avastar:"xxxx"               //你的头像
       pageSize:5,                  //每页显示文章数量,默认为5
       ornateStyle:true,             //是否开启博客装饰样式,默认为false,
-      bgImg:"xxxx",                  //doc文章(包括博客文章)的默认背景图片,可选,当博客装饰样式开启才生效
-      bgImgDark:"xxxx",            //doc文章(包括博客文章)的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
-      homeBgImg:"xxxx",              //博客首页的默认背景图片,可选,当博客装饰样式开启才生效
-      homeBgImgDark:"xxxx",         //博客首页的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
+      bgImg:"xxxx",                  //仅可用于doc文章(包括博客文章)的默认背景图片,可选,当博客装饰样式开启才生效
+      bgImgDark:"xxxx",            //仅可用于doc文章(包括博客文章)的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
     },
 }
 ```
@@ -185,3 +181,10 @@ layout: archive
 
 ---
 ```
+
+## 鸣谢
+
+- [vitepress](https://vitepress.dev/): 本主题是在vitepress及其默认主题的基础上进行开发
+- [tailwindcss](https://tailwindcss.com/):大大方便了css的书写与开发效率
+- [vuejs/blog](https://github.com/vuejs/blog): vue官方博客,参考了其中一些代码的实现
+- [fuwari](https://github.com/saicaca/fuwari): 一款Astro的博客主题,设计上对我有不小的启发

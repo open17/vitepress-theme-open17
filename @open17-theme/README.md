@@ -8,13 +8,12 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress-theme-open17
 
 
 ## Example
-![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020048139.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061019327.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061020261.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020048139.png)
 ![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020303360.png)
-
-![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020053342.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020053342.png)
 ![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020305190.png)
-
-![alt text](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020100666.png)
 
 
 ## Features
