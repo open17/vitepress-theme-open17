@@ -2,7 +2,7 @@
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
 import { computed, ref, onMounted, watch } from 'vue';
-const { theme, isDark } = useData()
+const { theme } = useData()
 const scrollUp = () => {
     window.scrollTo({
         top: 0,
@@ -62,15 +62,14 @@ onMounted(() => {
     <div class="flex w-full md:flex-row justify-center items-start pt-0 my-0 gap-16 flex-col">
         <!-- 博客信息 -->
         <div class="flex bg-transparent w-full md:w-80 justify-center items-start py-16 flex-col gap-5">
-            <div class="flex w-full rounded-3xl p-5 flex-col justify-center items-center gap-5"
-                :class="{ ' bg-gray-700': isDark, 'bg-white shadow-md': !isDark }">
+            <div class="flex w-full rounded-3xl p-5 flex-col justify-center items-center gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700"
+               >
                 <img :src="blogConfig.avatar" v-if="blogConfig.avatar" alt="avatar"
                     class=" object-cover object-center w-full rounded-3xl" />
                 <div class="text-xl font-bold mt-5">{{ blogConfig.title }}</div>
                 <div class="text-center">{{ blogConfig.desc }}</div>
             </div>
-            <div class="flex w-full rounded-3xl p-10 flex-col justify-center  gap-5"
-                :class="{ ' bg-gray-700': isDark, 'bg-white shadow-md': !isDark }">
+            <div class="flex w-full rounded-3xl p-10 flex-col justify-center  gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700">
                 <div class="text-xl font-bold ">Tags</div>
                 <div class="flex justify-center items-center flex-wrap gap-1">
                     <div v-for="(num, tag) in Tags" :key="tag"
@@ -90,7 +89,7 @@ onMounted(() => {
 
                 <div class="flex justify-center items-start rounded-3xl min-h-32 w-full flex-col gap-5 px-5 md:px-16 py-6 md:py-12
                      bg-opacity-90 backdrop-blur-sm
-                    " :class="{ ' bg-gray-700': isDark, 'bg-white shadow-md': !isDark }">
+                    dark:shadow-none shadow-md bg-white dark:bg-gray-700">
                     <div :class="{'border-l-red-400':post.frontmatter.pin}" class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 border-l-blue-400 pl-6 relative right-6">
                         <a :href="withBase(post.url)">{{ post.frontmatter.title }}</a>
                     </div>

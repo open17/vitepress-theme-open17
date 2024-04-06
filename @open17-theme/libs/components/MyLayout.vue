@@ -1,5 +1,5 @@
 <template>
-    <Layout  class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})` }"
+    <Layout class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})` }"
         v-show="!isLoading">
         <template #doc-before>
             <div class="text-3xl font-bold">{{ frontmatter.title }}</div>
@@ -23,10 +23,12 @@ const isBlogTop = ref(frontmatter.value.layout === 'blog');
 
 const bgImg = ref(null);
 
+
 onMounted(() => {
     import('../../tailwind').then(() => {
         isLoading.value = false;
     })
+
     window.addEventListener('scroll', () => {
         isBlogTop.value = window.scrollY <= 50;
     });
@@ -48,17 +50,18 @@ const getImg = () => {
     if (frontmatter.value.bgImg && !isDark.value) return frontmatter.value.bgImg;
     if (frontmatter.value.bgImgDark && isDark.value) return frontmatter.value.bgImgDark;
     if (theme.value.blog && (frontmatter.value.layout === 'docs' || !frontmatter.value.layout)) {
-        return isDark.value?theme.value.blog.bgImgDark:theme.value.blog.bgImg;
+        return isDark.value ? theme.value.blog.bgImgDark : theme.value.blog.bgImg;
     }
     return null;
 }
+
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
 </script>
 
 <style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 #VPContent {
     background: #ffffff74;
 }
