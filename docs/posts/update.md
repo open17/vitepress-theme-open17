@@ -11,7 +11,7 @@ pin: true
 ---
 
 :::info
-内容同步自[CHANGELOG](./CHANGELOG.md)
+内容同步自[CHANGELOG](https://github.com/open17/vitepress-theme-open17/blob/template/CHANGELOG.md)
 
 最新同步时间: {{ Date()}}
 
