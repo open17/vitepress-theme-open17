@@ -4,11 +4,13 @@ import { genFeed } from 'vitepress-theme-open17/genFeed'
 
 export default defineConfig({
   extends: baseConfig,
+  title: 'VitePress Open17',
+  description: 'A beautiful & simple blog theme of vitepress',
   markdown: {
     math: true
   },
   sitemap: {
-    hostname: 'https://www.open17.vip'
+    hostname: 'https://vitepress.open17.vip'
   },
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
   themeConfig: {
@@ -16,9 +18,9 @@ export default defineConfig({
       pattern: 'https://github.com/open17/vitepress-theme-open17/edit/template/docs/:path'
     },
     feed: {
-      baseUrl: "https://www.open17.vip",
+      baseUrl: "https://vitepress.open17.vip",
       copyright: "Copyright © 2023-present open17",
-      image: "https://www.open17.vip/logo.png",
+      image: "https://vitepress.open17.vip/logo.png",
     },
     blog: {
       avatar: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061142156.webp",
