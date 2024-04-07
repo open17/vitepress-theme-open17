@@ -46,7 +46,28 @@ bgImg和bgImgDark分别用于设置白天和黑夜的背景图片
 
 比如本博客的更新公告就是引入CHANGELOG的
 
-<<< ./update.md
+```md
+---
+tags:
+    - theme
+    - 更新
+title: 更新公告
+pin: true
+---
+
+这里是博客的更新公告
+
+---
+
+:::info
+内容同步自[CHANGELOG](https://github.com/open17/vitepress-theme-open17/blob/template/CHANGELOG.md)
+
+最新同步时间: {{ Date()}}
+
+:::
+
+<!--@include: @/../CHANGELOG.md -->
+```
 
 ## RSS配置
 
@@ -145,7 +166,7 @@ This is a details block.
 
 虽然之前有个小冲突,但现在修复了还是很好用的
 
-我的[算法仓库](xcpc.open17.vip)基本上依赖于这个功能
+我的[算法仓库](https://xcpc.open17.vip)基本上依赖于这个功能
 
 详见[import-code-snippets](https://vitepress.dev/guide/markdown#import-code-snippets)
 
