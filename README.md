@@ -14,9 +14,9 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 
 ## 特征
 
-- 开箱即用: 继承vitepress默认主题,无需额外更改原本配置,支持默认主题全部功能
-- 博客增强: 支持标签分类,摘要,归档,博客封面等常见功能
-- 轻松配置: 自动生成博客文章无需额外配置,博客功能页配置清晰简单
+- 博客功能增强: 对于博客主题常见的需求进行进一步加强,增加三种博客布局:标签页布局,归档页布局,博客主页布局,同时支持摘要,归档,博客置顶,头像,昵称,签名,RSS等常见博客功能需求
+- 更多体验加强: 自动引用posts文件夹生成博客文章;提供懒人式一键引用默认配置;提供博客装饰模式,支持背景图自定义替换;markdown中支持tailwindcss优化样式书写体验...
+- 继承默认主题: 继承vitepress默认主题,无需额外更改配置,兼容默认主题的全部功能,包括但不限于:代码片段导入,Markdown增强,自定义容器,vue组件使用,Sitemap...
 
 ## 示例图片<Badge type="tip" text="^1.0.0更新" />
 ![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061019327.png)
@@ -56,7 +56,6 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 
 ### 使用模板自动安装
 
-点击[github template](https://github.com/open17/vitepress-theme-open17/generate)即可快速开始
 点击[github template](https://github.com/open17/vitepress-theme-open17/generate)即可快速开始
 
 ### 手动安装与配置
