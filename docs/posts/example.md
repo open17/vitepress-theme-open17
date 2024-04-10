@@ -19,7 +19,7 @@ layout: page
             url:'/page/demo'
         },
         {
-            img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202404071024041.png',
+            img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202404102116657.png',
             title:'xcpc note',
             desc:'算法练习,笔记与模板',
             url:'https://xcpc.open17.vip'
