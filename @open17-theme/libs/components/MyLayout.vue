@@ -1,6 +1,10 @@
 <template>
-    <Layout class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})` }"
-        v-show="!isLoading">
+    <!-- loading -->
+    <Transition><div id="Loading" v-if="isLoading"></div></Transition>
+    
+    <Layout class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})`}"
+    :class="{'loadingStyle':isLoading}"
+    >
         <template #doc-before>
             <div class="text-3xl font-bold">{{ frontmatter.title }}</div>
         </template>
@@ -8,7 +12,6 @@
             <!-- 评论 -->
         </template>
     </Layout>
-    <div class="absolute z-0 top-0 max-w-0 max-h-0" v-if="!isLoading"></div>
 </template>
 
 <script setup>
@@ -28,7 +31,6 @@ onMounted(() => {
     import('../../tailwind').then(() => {
         isLoading.value = false;
     })
-
     window.addEventListener('scroll', () => {
         isBlogTop.value = window.scrollY <= 50;
     });
@@ -85,5 +87,35 @@ const getImg = () => {
     .VPNavBar[data-v-cf6e7c5e]:not(.home) {
         background-color: var(--vp-nav-bg-color) !important;
     }
+}
+</style>
+
+<style scoped>
+#Loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    margin: 0;
+    padding: 0%;
+    z-index: 10000;
+}
+
+.loadingStyle {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
