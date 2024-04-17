@@ -26,7 +26,10 @@ export default defineConfig({
       avatar: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061142156.webp",
       ornateStyle: true,
       bgImg: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020226261.png",
-      bgImgDark: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061333172.jpeg"
+      bgImgDark: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061333172.jpeg",
+      maxTags:5,
+      pageSize:3,
+      tagPageLink:'/page/tags'
     },
     logo: '/logo.png',
     lastUpdated: {
