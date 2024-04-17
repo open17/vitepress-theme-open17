@@ -11,7 +11,7 @@ const scrollUp = () => {
 }
 
 
-let pageSize = 3;
+let pageSize = 5;
 const blogConfig = theme.value.blog;
 
 
@@ -19,23 +19,33 @@ const blogConfig = theme.value.blog;
 if (blogConfig && blogConfig.pageSize) {
     pageSize = blogConfig.pageSize;
 }
-const total = posts.length;
+const total = computed(() => {
+    return filteredList.value.length; // 总数只考虑过滤后的帖子数量
+});
+
 const currentPage = ref(1);
-const totalPage = computed(() => Math.ceil(total / pageSize));
+const totalPage = computed(() => Math.ceil(total.value / pageSize));
 const paginatedPosts = computed(() => {
     const start = (currentPage.value - 1) * pageSize;
     const end = start + pageSize;
-    return posts.slice(start, end);
-})
+    return filteredList.value.slice(start, end); // 分页过滤后的帖子列表
+});
+
 const changePage = (curr) => {
     currentPage.value = curr;
     scrollUp();
 }
 
-
-
+const filteredList = computed(() => {
+    if (activeTag.value) {
+        return posts.filter(item => item.frontmatter.tags && item.frontmatter.tags.includes(activeTag.value));
+    } else {
+        return posts; // 如果没有活动标签，直接返回原始帖子列表
+    }
+});
 
 let Tags = ref({ '': posts.length });
+let activeTag = ref('');
 
 onMounted(() => {
     posts.forEach(post => {
@@ -52,33 +62,49 @@ onMounted(() => {
         }
 
     });
+
 });
 
-
+const getTagArray = () => {
+    let tagArray = [];
+    tagArray = Object.entries(Tags.value);
+    tagArray.sort((a, b) => b[1] - a[1]);
+    return tagArray;
+}
 
 </script>
 
 <template>
     <div class="flex w-full md:flex-row justify-center items-start pt-0 my-0 gap-16 flex-col">
         <!-- 博客信息 -->
-        <div class="flex bg-transparent w-full md:w-80 justify-center items-start py-16 flex-col gap-5">
-            <div class="flex w-full rounded-3xl p-5 flex-col justify-center items-center gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700"
-               >
+        <div class="flex bg-transparent w-full md:w-[22rem] justify-center items-start py-16 flex-col gap-5">
+            <div
+                class="flex w-full rounded-3xl p-5 flex-col justify-center items-center gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700">
                 <img :src="blogConfig.avatar" v-if="blogConfig.avatar" alt="avatar"
                     class=" object-cover object-center w-full rounded-3xl" />
                 <div class="text-xl font-bold mt-5">{{ blogConfig.title }}</div>
                 <div class="text-center">{{ blogConfig.desc }}</div>
             </div>
-            <div class="flex w-full rounded-3xl p-10 flex-col justify-center  gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700">
-                <div class="text-xl font-bold ">Tags</div>
-                <div class="flex justify-center items-center flex-wrap gap-1">
-                    <div v-for="(num, tag) in Tags" :key="tag"
-                        class=" px-2 py-1 rounded-md m-2 cursor-pointer border-2 tag relative flex justify-between items-center gap-2 border-[var(--vp-c-indigo-1)]"
-                        @click="ActiveTag = tag">
-                        <div class="tag">{{ tag == '' ? 'All' : tag }}</div>
+            <div
+                class="flex w-full rounded-3xl p-10 flex-col justify-center  gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700">
+                <div class=" flex w-full justify-between items-center">
+                    <div class="text-xl font-bold">Tags</div>
+                    <a v-if="blogConfig.tagPageLink" :href="blogConfig.tagPageLink">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="flex justify-center items-center flex-wrap gap-3 flex-col">
+                    <div v-for="(tag, i) in getTagArray()" class="w-full py-1 cursor-pointer border-b-2 tag relative flex justify-between items-center hover:border-[var(--vp-c-indigo-1)] 
+                         " :class="{ 'border-[var(--vp-c-indigo-1)]': activeTag === tag[0] }"
+                        @click="activeTag = tag[0]; changePage(1);"
+                        v-show="(!blogConfig.maxTags) || i < blogConfig.maxTags">
+                        <div class="tag">{{ tag[0] == '' ? 'All' : tag[0] }}</div>
                         <span class="px-2 scale-[70%] font-bold bg-[var(--vp-c-indigo-1)] text-white">{{
-                            num
-                            }}</span>
+                            tag[1] }}</span>
                     </div>
                 </div>
             </div>
@@ -90,7 +116,8 @@ onMounted(() => {
                 <div class="flex justify-center items-start rounded-3xl min-h-32 w-full flex-col gap-5 px-5 md:px-16 py-6 md:py-12
                      bg-opacity-90 backdrop-blur-sm
                     dark:shadow-none shadow-md bg-white dark:bg-gray-700">
-                    <div :class="{'border-l-red-400':post.frontmatter.pin}" class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 border-l-blue-400 pl-6 relative right-6">
+                    <div :class="{ 'border-l-red-400': post.frontmatter.pin }"
+                        class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 border-l-blue-400 pl-6 relative right-6">
                         <a :href="withBase(post.url)">{{ post.frontmatter.title }}</a>
                     </div>
                     <div v-html="post.excerpt" class=" text-lg"></div>
