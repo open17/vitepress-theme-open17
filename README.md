@@ -110,7 +110,7 @@ export default defineConfig({
 
 可选的字段是tags,pin(置顶),bgImg(背景图片, ornateStyle模式开启时生效,可用于任何页面),同时支持excerpt(摘要),下面是一个简单的示例:
 
-当页面没有摘要的时候,可以设置desc字段作为摘要<Badge type="tip" text="^1.1.1更新" />
+当页面没有摘要的时候,可以设置desc字段作为摘要<Badge type="tip" text="^1.0.2更新" />
 
 ```md
 ---
@@ -142,7 +142,7 @@ Hello World
 
 ## 博客配置
 
-### 主题配置<Badge type="tip" text="^1.1.1更新" />
+### 主题配置<Badge type="tip" text="^1.0.2更新" />
 目前配置主要作用于博客首页
 ```js
 themeConfig:{
