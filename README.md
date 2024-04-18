@@ -43,6 +43,8 @@ To check out docs, visit [vitepress-theme-open17](https://vitepress.open17.vip/)
 - [x] 独立出主题部分发布npm
 - [x] 移动端优化
 - [x] cdn资源转本地
+- [ ] 支持可选的幻灯片功能
+- [ ] 支持可选的markdown增强
 
 
 
