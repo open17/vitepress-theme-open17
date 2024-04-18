@@ -1,7 +1,9 @@
 <script setup>
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
-import { computed, ref, onMounted, watch } from 'vue';
+import { computed, ref } from 'vue';
+import BlogLayout from './BlogLayout.vue';
+
 const { theme } = useData()
 const scrollUp = () => {
     window.scrollTo({
@@ -10,142 +12,70 @@ const scrollUp = () => {
     })
 }
 
-
-let pageSize = 5;
 const blogConfig = theme.value.blog;
 
-
 // 分页功能
+let pageSize = 5;
 if (blogConfig && blogConfig.pageSize) {
     pageSize = blogConfig.pageSize;
 }
-const total = computed(() => {
-    return filteredList.value.length; // 总数只考虑过滤后的帖子数量
-});
 
 const currentPage = ref(1);
-const totalPage = computed(() => Math.ceil(total.value / pageSize));
-const paginatedPosts = computed(() => {
+const totalPage = ref(1);
+
+const paginatedPosts = (activeTag) => {
     const start = (currentPage.value - 1) * pageSize;
     const end = start + pageSize;
-    return filteredList.value.slice(start, end); // 分页过滤后的帖子列表
-});
+    let postsList = filteredList(activeTag);
+    totalPage.value = Math.ceil(postsList.length / pageSize);
+    if (totalPage.value < currentPage.value) {
+        currentPage.value = 1;
+    }
+    return postsList.slice(start, end);
+}
 
 const changePage = (curr) => {
     currentPage.value = curr;
     scrollUp();
 }
 
-const filteredList = computed(() => {
-    if (activeTag.value) {
-        return posts.filter(item => item.frontmatter.tags && item.frontmatter.tags.includes(activeTag.value));
-    } else {
-        return posts; // 如果没有活动标签，直接返回原始帖子列表
+const filteredList = (activeTag) => {
+    if (activeTag) {
+        return posts.filter(item => item.frontmatter.tags && item.frontmatter.tags.includes(activeTag));
     }
-});
-
-let Tags = ref({ '': posts.length });
-let activeTag = ref('');
-
-onMounted(() => {
-    posts.forEach(post => {
-        const tags = post.frontmatter.tags;
-        if (tags) {
-            tags.forEach(tag => {
-                if (Tags.value[tag]) {
-                    Tags.value[tag]++;
-                }
-                else {
-                    Tags.value[tag] = 1;
-                }
-            })
-        }
-
-    });
-
-});
-
-const getTagArray = () => {
-    let tagArray = [];
-    tagArray = Object.entries(Tags.value);
-    tagArray.sort((a, b) => b[1] - a[1]);
-    return tagArray;
+    return posts;
 }
 
 </script>
 
 <template>
-    <div class="flex w-full md:flex-row justify-center items-start pt-0 my-0 gap-16 flex-col">
-        <!-- 博客信息 -->
-        <div class="flex bg-transparent w-full md:w-[22rem] justify-center items-start py-16 flex-col gap-5">
-            <div
-                class="flex w-full rounded-3xl p-5 flex-col justify-center items-center gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700">
-                <img :src="blogConfig.avatar" v-if="blogConfig.avatar" alt="avatar"
-                    class=" object-cover object-center w-full rounded-3xl" />
-                <div class="text-xl font-bold mt-5">{{ blogConfig.title }}</div>
-                <div class="text-center">{{ blogConfig.desc }}</div>
-            </div>
-            <div
-                class="flex w-full rounded-3xl p-10 flex-col justify-center  gap-5 dark:shadow-none shadow-md bg-white dark:bg-gray-700">
-                <div class=" flex w-full justify-between items-center">
-                    <div class="text-xl font-bold">Tags</div>
-                    <a v-if="blogConfig.tagPageLink" :href="blogConfig.tagPageLink">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="flex justify-center items-center flex-wrap gap-3 flex-col">
-                    <div v-for="(tag, i) in getTagArray()" class="w-full py-1 cursor-pointer border-b-2 tag relative flex justify-between items-center hover:border-[var(--vp-c-indigo-1)] 
-                         " :class="{ 'border-[var(--vp-c-indigo-1)]': activeTag === tag[0] }"
-                        @click="activeTag = tag[0]; changePage(1);"
-                        v-show="(!blogConfig.maxTags) || i < blogConfig.maxTags">
-                        <div class="tag">{{ tag[0] == '' ? 'All' : tag[0] }}</div>
-                        <span class="px-2 scale-[70%] font-bold bg-[var(--vp-c-indigo-1)] text-white">{{
-                            tag[1] }}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 博客文章 -->
-        <div class="flex md:w-7/12 py-20 justify-center items-center gap-5 flex-col w-full">
-            <div class="w-full flex justify-center items-center relative" v-for="post of paginatedPosts">
-
-                <div class="flex justify-center items-start rounded-3xl min-h-32 w-full flex-col gap-5 px-5 md:px-16 py-6 md:py-12
+    <BlogLayout v-slot="{ activeTag }">
+        <div class="w-full flex justify-center items-center relative" v-for="post of paginatedPosts(activeTag)">
+            <div class="flex justify-center items-start rounded-3xl min-h-32 w-full flex-col gap-5 px-5 md:px-16 py-6 md:py-12
                      bg-opacity-90 backdrop-blur-sm
-                    dark:shadow-none shadow-md bg-white dark:bg-gray-700">
-                    <div :class="{ 'border-l-red-400': post.frontmatter.pin }"
-                        class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 border-l-blue-400 pl-6 relative right-6">
-                        <a :href="withBase(post.url)">{{ post.frontmatter.title }}</a>
-                    </div>
-                    <div v-html="post.excerpt" class=" text-lg"></div>
-                    <div class="flex justify-between w-full items-center">
-                        <div>{{ post.frontmatter.date.substring(0, 10) }}</div>
-                        <div class="flex justify-end items-end gap-2">
-                            <div class="text-[var(--vp-c-indigo-1)]" v-for="(tag, idx) in post.frontmatter.tags">{{
-                                idx === post.frontmatter.tags.length - 1 ? tag : tag + ',' }}</div>
-                        </div>
+                    dark:shadow-none shadow-0 bg-white dark:bg-gray-700">
+                <div :class="{ 'border-l-red-400': post.frontmatter.pin }"
+                    class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 border-l-blue-400 pl-6 relative right-6">
+                    <a :href="withBase(post.url)">{{ post.frontmatter.title }}</a>
+                </div>
+                <div v-html="post.excerpt || post.frontmatter.desc" class=" text-lg"></div>
+                <div class="flex justify-between w-full items-center">
+                    <div>{{ post.frontmatter.date.substring(0, 10) }}</div>
+                    <div class="flex justify-end items-end gap-2">
+                        <div class="text-[var(--vp-c-indigo-1)]" v-for="(tag, idx) in post.frontmatter.tags">{{
+                            idx === post.frontmatter.tags.length - 1 ? tag : tag + ',' }}</div>
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center items-center gap-2 border-0 flex-row bg-t">
-                <div @click="changePage(i)" v-for="i in totalPage" v-if="totalPage > 1"
-                    class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]"
-                    :class="{
-                        'bg-[var(--vp-c-indigo-1)] text-white': i === currentPage,
-                        'bg-transparent': i !== currentPage,
-                    }">{{ i }}</div>
-            </div>
         </div>
-
-    </div>
+        <div class="flex justify-center items-center gap-2 border-0 flex-row bg-t">
+            <div @click="changePage(i)" v-for="i in totalPage" v-if="totalPage > 1"
+                class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-indigo-1)]"
+                :class="{
+                    'bg-[var(--vp-c-indigo-1)] text-white': i === currentPage,
+                    'bg-transparent': i !== currentPage,
+                }">{{ i }}</div>
+        </div>
+    </BlogLayout>
 
 </template>
-
-<style>
-.blog-home .VPContent {
-    padding-top: 0 !important;
-}
-</style>
