@@ -6,6 +6,7 @@ tags:
     - theme
 pin: true
 layout: page
+desc: 这里是一些示例博客，你可以将你的博客内容复制到这里来展示。
 ---
 
 <script setup>

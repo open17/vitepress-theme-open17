@@ -110,6 +110,8 @@ export default defineConfig({
 
 可选的字段是tags,pin(置顶),bgImg(背景图片, ornateStyle模式开启时生效,可用于任何页面),同时支持excerpt(摘要),下面是一个简单的示例:
 
+当页面没有摘要的时候,可以设置desc字段作为摘要<Badge type="tip" text="^1.1.1更新" />
+
 ```md
 ---
 title: 我的第一篇博客
@@ -121,6 +123,8 @@ tags:
 pin: true
 bgImg: "xxxx" 
 bgImgDark: "xxxx"
+
+desc: xxxx
 
 ---
 
@@ -138,18 +142,20 @@ Hello World
 
 ## 博客配置
 
-### 主题配置<Badge type="tip" text="^1.1.0更新" />
+### 主题配置<Badge type="tip" text="^1.1.1更新" />
 目前配置主要作用于博客首页
 ```js
 themeConfig:{
     blog:{
       title: "My Awesome Blog",   
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      avastar:"xxxx"               //你的头像
+      avatar:"xxxx"               //你的头像
       pageSize:5,                  //每页显示文章数量,默认为5
       ornateStyle:true,             //是否开启博客装饰样式,默认为false,
       bgImg:"xxxx",                  //仅可用于doc文章(包括博客文章)的默认背景图片,可选,当博客装饰样式开启才生效
       bgImgDark:"xxxx",            //仅可用于doc文章(包括博客文章)的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
+      maxTags:5,                  //博客首页的标签栏显示的最大标签数量,默认为5
+      tagPageLink:'/page/tags'    // 如果不为空,则在博客首页的标签栏会显示更多标签的链接,点击后会跳转到该链接
     },
 }
 ```
