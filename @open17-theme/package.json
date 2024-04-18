@@ -22,7 +22,6 @@
     "vitepress blog"
   ],
   "dependencies": {
-    "feed": "^4.2.2",
-    "vitepress-theme-open17": "^1.0.2"
+    "feed": "^4.2.2"
   }
 }
