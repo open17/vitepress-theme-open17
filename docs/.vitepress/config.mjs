@@ -23,10 +23,8 @@ export default defineConfig({
       image: "https://vitepress.open17.vip/logo.png",
     },
     blog: {
-      avatar: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061142156.webp",
+      avatar: "https://avatars.githubusercontent.com/u/125687556?v=4",
       ornateStyle: true,
-      bgImg: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020226261.png",
-      bgImgDark: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061333172.jpeg",
       maxTags:5,
       pageSize:3,
       tagPageLink:'/page/tags'
