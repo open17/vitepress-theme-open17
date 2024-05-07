@@ -1,3 +1,9 @@
+## v1.1.0(2024-05-08)
+
+### Performance Improvements
+- 优化博客样式
+- 增加自定义组件功能
+
 ## v1.0.2(2024-04-18)
 
 ### Performance Improvements
