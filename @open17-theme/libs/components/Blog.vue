@@ -51,16 +51,16 @@ const filteredList = (activeTag) => {
 <template>
     <BlogLayout v-slot="{ activeTag }">
         <div class="w-full flex justify-center items-center relative" v-for="post of paginatedPosts(activeTag)">
-            <div class="flex justify-center items-start rounded-3xl min-h-32 w-full flex-col gap-5 px-5 md:px-16 py-6 md:py-12
+            <div class="flex justify-center items-start md:rounded-xl min-h-32 w-full flex-col gap-5 px-5 md:px-16 py-6 md:py-12
                      bg-opacity-90 backdrop-blur-sm
-                    dark:shadow-none shadow-0 bg-white dark:bg-gray-700">
-                <div :class="{ 'border-l-red-400': post.frontmatter.pin }"
-                    class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 border-l-blue-400 pl-6 relative right-6">
+                    dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
+                <div :class="{ 'border-l-[--vp-c-red-2]': post.frontmatter.pin,'border-l-[var(--vp-c-indigo-1)]':!post.frontmatter.pin }"
+                    class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 pl-6 relative right-6">
                     <a :href="withBase(post.url)">{{ post.frontmatter.title }}</a>
                 </div>
                 <div v-html="post.excerpt || post.frontmatter.desc" class=" text-lg"></div>
-                <div class="flex justify-between w-full items-center">
-                    <div>{{ post.frontmatter.date.substring(0, 10) }}</div>
+                <div class="flex justify-between w-full items-center flex-wrap">
+                    <span class="text-[var(--vp-c-text-3)]">{{ post.frontmatter.date.substring(0, 10) }}</span>
                     <div class="flex justify-end items-end gap-2">
                         <div class="text-[var(--vp-c-indigo-1)]" v-for="(tag, idx) in post.frontmatter.tags">{{
                             idx === post.frontmatter.tags.length - 1 ? tag : tag + ',' }}</div>

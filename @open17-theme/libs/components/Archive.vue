@@ -1,7 +1,7 @@
 <template>
   <BlogLayout>
     <div class="flex w-full flex-col justify-center items-center bg-opacity-90 backdrop-blur-sm
-                    dark:shadow-none shadow-0 bg-white dark:bg-gray-700 rounded-3xl py-20 px-10">
+                    dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)] md:rounded-xl py-20 px-10">
       <div class="text-5xl font-bold">Archive</div>
       <!-- 博客文章 -->
       <div class="flex mt-10 justify-center items-center">
@@ -15,7 +15,7 @@
                   <li v-for="post in monthPosts" :key="post.id">
                     <div class="flex items-center gap-10 justify-between mb-3">
                       <a :href="withBase(post.url)" class="mr-2 hover:underline">{{ post.frontmatter.title }}</a>
-                      <span class="text-gray-400">{{ post.frontmatter.date.substring(0, 10) }}</span>
+                      <span class="text-[var(--vp-c-text-3)]">{{ post.frontmatter.date.substring(0, 10) }}</span>
                     </div>
                   </li>
                 </ul>

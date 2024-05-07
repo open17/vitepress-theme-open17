@@ -1,18 +1,18 @@
 <template>
     <BlogLayout>
         <div class="flex justify-center items-center flex-col gap-20 w-full bg-opacity-90 backdrop-blur-sm
-                    dark:shadow-none shadow-0 bg-white dark:bg-gray-700 rounded-3xl py-20 px-10">
+                    dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)] md:rounded-xl py-20 px-10">
             <div class="text-3xl mt-5 font-bold">Tags - <span class="text-3xl">{{ ActiveTag == '' ? 'All' : ActiveTag
                     }}</span> </div>
             <!-- tags list -->
             <div class="flex justify-left items-center flex-wrap md:mx-10  md:gap-2 gap-1">
                 <span v-for="(num, tag) in Tags" :key="tag"
-                    class="px-4 py-1 rounded-md m-2 cursor-pointer border-2 tag relative" @click="ActiveTag = tag">
+                    class="px-4 py-1 rounded-md m-2 cursor-pointer border-2 border-[var(--vp-c-indigo-1)] tag relative" @click="ActiveTag = tag">
                     {{ tag == '' ? 'All' : tag }}
-                    <span
-                        class=" absolute top-[-0.9rem] right-[-1rem] rounded-full px-2 scale-[70%] border-2 border-[var(--vp-c-indigo-1)] bg-white dark:bg-gray-700">{{
+                    <!-- <span
+                        class=" absolute top-[-0.9rem] right-[-1rem] rounded-full px-2 scale-[70%] border-2 border-[var(--vp-c-indigo-1)] bg-[var(--vp-c-bg-soft)]">{{
                             num
-                        }}</span>
+                        }}</span> -->
                 </span>
             </div>
             <div class="text-2xl w-full text-center border-dashed border-t-2 pt-5"></div>
@@ -67,9 +67,3 @@ const filteredList = computed(() => {
     return list;
 });
 </script>
-
-<style scoped>
-.tag {
-    border-color: var(--vp-c-indigo-1);
-}
-</style>
