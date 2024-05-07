@@ -6,21 +6,16 @@ tags:
     - theme
 pin: true
 layout: page
-desc: 这里是一些示例博客，你可以将你的博客内容复制到这里来展示。
+desc: 本主题的示例博客
 ---
+
 
 <script setup>
     import BlogCard from '../components/BlogCard.vue'
     import BlogCardPage from '../components/BlogCardPage.vue'
     const blog=[
         {
-            img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202404061020261.png',
-            title:'open17主题demo',
-            desc:'open17主题博客的简单示例',
-            url:'/page/demo'
-        },
-        {
-            img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202404102116657.png',
+            img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080238501.png',
             title:'xcpc note',
             desc:'算法练习,笔记与模板',
             url:'https://xcpc.open17.vip'
@@ -29,6 +24,6 @@ desc: 这里是一些示例博客，你可以将你的博客内容复制到这�
 </script>
 
 <BlogCardPage>
-<template #title>下面是本主题的一些博客示例</template>
+<template #title>本主题的博客示例</template>
 <BlogCard :blog="blog" />
 </BlogCardPage>

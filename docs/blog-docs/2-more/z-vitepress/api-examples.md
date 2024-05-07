@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Runtime API Examples
+# 运行时API
 
 This page demonstrates usage of some of the runtime APIs provided by VitePress.
 
@@ -18,13 +18,13 @@ const { theme, page, frontmatter } = useData()
 ## Results
 
 ### Theme Data
-<pre>{{ theme }}</pre>
+<pre class="overflow-x-auto">{{ theme }}</pre>
 
 ### Page Data
-<pre>{{ page }}</pre>
+<pre class="overflow-x-auto">{{ page }}</pre>
 
 ### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+<pre class="overflow-x-auto">{{ frontmatter }}</pre>
 ```
 
 <script setup>
@@ -36,13 +36,13 @@ const { site, theme, page, frontmatter } = useData()
 ## Results
 
 ### Theme Data
-<pre>{{ theme }}</pre>
+<pre class="overflow-x-auto ">{{ theme }}</pre>
 
 ### Page Data
-<pre>{{ page }}</pre>
+<pre class="overflow-x-auto">{{ page }}</pre>
 
 ### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+<pre class="overflow-x-auto">{{ frontmatter }}</pre>
 
 ## More
 
