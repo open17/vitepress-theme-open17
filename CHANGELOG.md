@@ -1,3 +1,7 @@
+## v1.1.1(2024-05-08)
+### Performance Improvements
+- 支持在博客布局中渲染markdown
+
 ## v1.1.0(2024-05-08)
 
 ### Performance Improvements
