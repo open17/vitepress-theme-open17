@@ -32,6 +32,9 @@ themeConfig:{
 ```
 
 ## 自定义组件栏<Badge type="tip" text="NEW" />
+
+在这里我们可以自定义各种组件放置于首页,比如精选文章,比如广告,比如微信群二维码等....
+
 ```js
 themeConfig:{
     blog:{
@@ -48,4 +51,69 @@ themeConfig:{
       ]
     },
 }
+```
+当然,尽管支持tailwindcss,直接书写html字符串依然较为繁琐且不易维护,且无法动态渲染内容
+
+自`1.1.1`起,支持在博客首页等布局也渲染markdown内容,因此我们可以做出如下改变:
+
+在widgets中只留下对应的id,例如
+```js
+widgets:[
+  {
+    name:"Custom",
+    link:'/blog-docs/1-config/0-home.html#自定义组件栏',
+    html:`<div id="custom1"></div>`,
+  },
+]
+```
+
+在博客首页对应的markdown中利用script动态改变id的内容:
+```md
+---
+layout: blog
+---
+
+<script setup>
+import { onMounted, createApp,h } from 'vue';
+onMounted(() => {
+    const el = document.getElementById('custom1');
+    if (el) {
+      el.innerHTML = '这是我动态渲染的内容';
+    }
+});
+</script>
+```
+
+因此我们可以有无限的扩展能力,比如引入与渲染vue组件
+
+下面是一个示例:
+
+```md
+---
+layout: blog
+---
+
+<script setup>
+import BlogCard from '../components/BlogCard.vue'
+import BlogCardPage from '../components/BlogCardPage.vue'
+import { onMounted, createApp,h } from 'vue';
+const blog=[
+    {
+        img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080238501.png',
+        desc:'算法练习,笔记与模板',
+        url:'https://alg.open17.vip'
+    },
+];
+onMounted(() => {
+    const el = document.getElementById('custom1');
+    const app = createApp({
+      render() {
+        return h(BlogCard, {
+          blog: blog
+        });
+      }
+    });
+    app.mount(el);
+});
+</script>
 ```

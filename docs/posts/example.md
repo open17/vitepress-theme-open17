@@ -16,7 +16,7 @@ desc: 本主题的示例博客
     const blog=[
         {
             img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080238501.png',
-            title:'xcpc note',
+            title:'Alg Note',
             desc:'算法练习,笔记与模板',
             url:'https://xcpc.open17.vip'
         },

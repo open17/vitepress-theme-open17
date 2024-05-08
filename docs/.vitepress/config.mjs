@@ -49,9 +49,9 @@ export default defineConfig({
       tagPageLink:'/page/tags',
       widgets:[
         {
-          name:"Custom",
-          link:'/blog-docs/',
-          html:`主题自定义组件,支持html渲染`,
+          name:"🍰示例",
+          link:'/blog-docs/1-config/0-home.html#自定义组件栏',
+          html:`<div id="custom1"></div>`,
         },
       ]
     },
