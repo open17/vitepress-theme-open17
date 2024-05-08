@@ -106,7 +106,7 @@ const getTagArray = () => {
         </div>
 
     </div>
-
+    <Content /> 
 </template>
 
 <style>
