@@ -9,16 +9,21 @@
     #4778d5 30%,
     #41d1ff
   );
-
-  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #47cbff83 50%,
+    #47cbff83 50%
+  );
+/* 
+  --vp-home-hero-image-background-image: none; */
   --vp-home-hero-image-filter: blur(44px);
 }
 
 .dark:root{
     --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
+    -90deg,
     #3477fe 50%,
-    #47caff 50%
+    #3477fe 50%
   );
 }
 

@@ -44,7 +44,10 @@ export default defineConfig({
       pageSize:4,
       tagPageLink:'/page/tags',
     },
-    logo: '/logo.png',
+    logo: {
+      dark:'/logo.png',
+      light:'/logo_light.png'
+    },
     lastUpdated: {
       text: 'Updated at',
       formatOptions: {
