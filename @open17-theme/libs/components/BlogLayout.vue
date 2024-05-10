@@ -1,9 +1,21 @@
 <script setup>
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
-import { computed, ref, onMounted, watch } from 'vue';
-const { theme } = useData()
+import { computed, ref, onMounted } from 'vue';
+
+const props = defineProps({
+    showContent: Boolean,
+})
+const { theme,frontmatter } = useData();
+
+
+
 const blogConfig = theme.value.blog;
+
+const widgets=[...(blogConfig.widgets||[]),...(frontmatter.value.widgets||[])];
+
+console.log(widgets);
+
 let Tags = ref({ '': posts.length });
 
 let activeTag = ref('');
@@ -72,18 +84,18 @@ const getTagArray = () => {
                     </a>
                 </div>
                 <div class="flex justify-center items-center flex-wrap gap-3 flex-col">
-                    <div v-for="(tag, i) in getTagArray()" class="w-full py-1 cursor-pointer border-b-2 tag relative flex justify-between items-center hover:border-[var(--vp-c-indigo-1)] 
-                         " :class="{ 'border-[var(--vp-c-indigo-1)]': activeTag === tag[0] }"
+                    <div v-for="(tag, i) in getTagArray()" class="w-full py-1 cursor-pointer border-b-2 tag relative flex justify-between items-center hover:border-[var(--vp-c-brand-1)] 
+                         " :class="{ 'border-[var(--vp-c-brand-1)]': activeTag === tag[0] }"
                         @click="activeTag = tag[0]" v-show="(!blogConfig.maxTags) || i < blogConfig.maxTags">
                         <div class="tag">{{ tag[0] == '' ? 'All' : tag[0] }}</div>
-                        <span class="px-2 scale-[70%] font-bold bg-[var(--vp-c-indigo-1)] text-white">{{
+                        <span class="px-2 scale-[70%] font-bold bg-[var(--vp-c-brand-1)] text-white">{{
                             tag[1] }}</span>
                     </div>
                 </div>
             </div>
 
             <!-- 用户自定义组件 -->
-            <div v-for="widget in blogConfig.widgets"
+            <div v-for="widget in widgets"
                 class="flex w-full md:rounded-xl p-10 flex-col justify-center  gap-5 dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
                 <div class=" flex w-full justify-between items-center">
                     <div class="text-xl font-bold">{{ widget.name }}</div>
@@ -95,7 +107,7 @@ const getTagArray = () => {
                         </svg>
                     </a>
                 </div>
-                <div v-html="widget.html"></div>
+                <div v-html="widget.html" class="w-full relative"></div>
             </div>
 
 
@@ -106,7 +118,7 @@ const getTagArray = () => {
         </div>
 
     </div>
-    <Content /> 
+    <Content v-if="showContent"/> 
 </template>
 
 <style>

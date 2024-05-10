@@ -7,10 +7,10 @@
             <!-- tags list -->
             <div class="flex justify-left items-center flex-wrap md:mx-10  md:gap-2 gap-1">
                 <span v-for="(num, tag) in Tags" :key="tag"
-                    class="px-4 py-1 rounded-md m-2 cursor-pointer border-2 border-[var(--vp-c-indigo-1)] tag relative" @click="ActiveTag = tag">
+                    class="px-4 py-1 rounded-md m-2 cursor-pointer border-2 border-[var(--vp-c-brand-1)] tag relative" @click="ActiveTag = tag">
                     {{ tag == '' ? 'All' : tag }}
                     <!-- <span
-                        class=" absolute top-[-0.9rem] right-[-1rem] rounded-full px-2 scale-[70%] border-2 border-[var(--vp-c-indigo-1)] bg-[var(--vp-c-bg-soft)]">{{
+                        class=" absolute top-[-0.9rem] right-[-1rem] rounded-full px-2 scale-[70%] border-2 border-[var(--vp-c-brand-1)] bg-[var(--vp-c-bg-soft)]">{{
                             num
                         }}</span> -->
                 </span>
@@ -22,7 +22,7 @@
                     v-for="post in filteredList" :key="post.url">
                     <a :href="withBase(post.url)" class="hover:underline">{{ post.frontmatter.title }}</a>
                     <div class="flex justify-end items-end gap-2">
-                        <span class="text-[var(--vp-c-indigo-1)] cursor-pointer hover:underline hover:underline-offset-4"
+                        <span class="text-[var(--vp-c-brand-1)] cursor-pointer hover:underline hover:underline-offset-4"
                             v-for="(tag, idx) in post.frontmatter.tags" @click="ActiveTag = tag">{{
                                 idx === post.frontmatter.tags.length-1?tag:tag+',' }}</span>
                     </div>
