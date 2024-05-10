@@ -43,13 +43,6 @@ export default defineConfig({
       maxTags:5,
       pageSize:4,
       tagPageLink:'/page/tags',
-      widgets:[
-        {
-          name:"🍰示例",
-          link:'/blog-docs/1-config/0-home.html#自定义组件栏',
-          html:`<div id="custom1"></div>`,
-        },
-      ]
     },
     logo: '/logo.png',
     lastUpdated: {

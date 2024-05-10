@@ -3,6 +3,10 @@ layout: blog
 lastUpdated: false
 bgImg: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020238396.png"
 bgImgDark: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071545259.jpg'
+widgets:
+  - name: "🍰示例"
+    link: "/blog-docs/1-config/0-home.html#自定义组件栏"
+    html: "<div id='custom1'></div>"
 ---
 
 <script setup>

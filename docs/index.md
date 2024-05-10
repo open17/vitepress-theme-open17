@@ -7,10 +7,9 @@ bgImgDark: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071545259.jpg'
 hero:
   name: "Vitepress Open17"
   text: "一个简单美观的博客主题,继承于默认主题"
-  tagline: 自定义背景,RSS,标签,摘要,置顶,归档,博客首页...
+  tagline: 自定义背景,博客,标签,摘要,归档...
   image:
-    dark: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071726176.png"
-    light: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071727342.png"
+    src: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202405102050504.svg"
     alt: open17
   actions:
     - theme: brand
