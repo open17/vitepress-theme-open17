@@ -18,7 +18,8 @@
   "keywords": [
     "vitepress",
     "vitepress theme",
-    "blog theme",
+    "vitepress-theme",
+    "vitepress-blog",
     "vitepress blog"
   ],
   "dependencies": {
