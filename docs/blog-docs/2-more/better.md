@@ -73,7 +73,7 @@ pin: true
 
 本主题支持RSS,配置如下,会在build的时候生成路径为`baseUrl+feed.rss`
 
-详见[RSS](/blog-docs/2-more/RSS)
+详见[RSS](/blog-docs/1-config/RSS)
 
 ## Sitemap
 

@@ -1,4 +1,4 @@
-# 基本
+# 基础指南
 
 ![logo](https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071712279.png)
 

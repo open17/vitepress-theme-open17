@@ -1,29 +1,24 @@
 import { defineConfig } from 'vitepress'
 import baseConfig from 'vitepress-theme-open17/config'
 import { genFeed } from 'vitepress-theme-open17/genFeed'
-import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 
+import { generateSidebar } from 'vitepress-sidebar';
+
+const vitepressSidebarOptions = [{
+  documentRootPath: 'docs',
+  scanStartPath: 'blog-docs',
+  resolvePath: '/blog-docs/',
+  collapsed: true,
+  useTitleFromFileHeading: true,
+  useFolderTitleFromIndexFile: true,
+  useFolderLinkFromIndexFile: true,
+  rootGroupCollapsed:true,
+}];
 
 export default defineConfig({
-  vite: {
-    plugins: [
-      AutoSidebar({
-        ignoreList: ['page', 'posts', 'public'],
-        titleFromFile: true,
-        beforeCreateSideBarItems: (data) => {
-          const indexIndex = data.indexOf("index.md");
-          if (indexIndex !== -1) {
-            const indexValue = data[indexIndex];
-            data.splice(indexIndex, 1);
-            data.unshift(indexValue);
-          }
-          return data;
-        }
-      })
-    ]
-  },
   extends: baseConfig,
   title: 'VitePress Open17',
+  lang: 'zh-CN',
   description: 'A beautiful & simple blog theme of vitepress',
   markdown: {
     math: true
@@ -33,6 +28,7 @@ export default defineConfig({
   },
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
   themeConfig: {
+    sidebar: generateSidebar(vitepressSidebarOptions),
     editLink: {
       pattern: 'https://github.com/open17/vitepress-theme-open17/edit/template/docs/:path'
     },
@@ -45,7 +41,7 @@ export default defineConfig({
       avatar: "https://avatars.githubusercontent.com/u/125687556?v=4",
       ornateStyle: true,
       maxTags:5,
-      pageSize:3,
+      pageSize:4,
       tagPageLink:'/page/tags',
       widgets:[
         {
