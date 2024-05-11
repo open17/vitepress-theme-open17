@@ -12,7 +12,7 @@ const vitepressSidebarOptions = [{
   useTitleFromFileHeading: true,
   useFolderTitleFromIndexFile: true,
   useFolderLinkFromIndexFile: true,
-  rootGroupCollapsed:true,
+  rootGroupCollapsed: true,
 }];
 
 export default defineConfig({
@@ -26,7 +26,18 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://vitepress.open17.vip'
   },
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['script', {}, `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0a05ed98f94a5486639ae0f97c7b6fff";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    `],
+    ['meta', { name: 'keywords', content: 'vitepress, theme, blog, open17' }],],
   themeConfig: {
     sidebar: generateSidebar(vitepressSidebarOptions),
     editLink: {
@@ -40,13 +51,13 @@ export default defineConfig({
     blog: {
       avatar: "https://avatars.githubusercontent.com/u/125687556?v=4",
       ornateStyle: true,
-      maxTags:5,
-      pageSize:4,
-      tagPageLink:'/page/tags',
+      maxTags: 5,
+      pageSize: 4,
+      tagPageLink: '/page/tags',
     },
     logo: {
-      dark:'/logo.png',
-      light:'/logo_light.png'
+      dark: '/logo.png',
+      light: '/logo_light.png'
     },
     lastUpdated: {
       text: 'Updated at',
