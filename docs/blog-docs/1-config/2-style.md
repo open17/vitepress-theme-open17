@@ -20,7 +20,7 @@ export default Theme
 下面是本主题默认的主题色:
 
 ```css
-// .vitepress/theme/style.css
+/* .vitepress/theme/style.css */
 :root{
   --vp-c-brand-1: #2276ca;
   --vp-c-brand-2: #3c83ba;
