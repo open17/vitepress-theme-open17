@@ -1,6 +1,6 @@
 ---
 layout: tags
 lastUpdated: false
-bgImg: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020238396.png"
-bgImgDark: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071545259.jpg'
+bgImg: "/bg2.jpg"
+bgImgDark: '/bg_dark.jpg'
 ---

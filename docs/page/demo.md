@@ -1,12 +1,12 @@
 ---
 layout: blog
 lastUpdated: false
-bgImg: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202404020238396.png"
-bgImgDark: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071545259.jpg'
+bgImg: "/bg2.jpg"
+bgImgDark: '/bg_dark.jpg'
 widgets:
-  - name: "🍰示例"
+  - name: "🍰广告时间"
     link: "/blog-docs/1-config/0-home.html#自定义组件栏"
-    html: "<div id='custom1'></div>"
+    html: "主题博客示例<br><br><div id='custom1'></div>"
 ---
 
 <script setup>
@@ -16,7 +16,7 @@ const blog=[
     {
         img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080238501.png',
         desc:'算法练习,笔记与模板',
-        url:'https://alg.open17.vip'
+        url:'https://www.open17.vip'
     },
 ];
 onMounted(() => {
