@@ -5,6 +5,8 @@ tags:
     - 多项式
 title: 快速傅里叶变换(FFT)
 date: 2024-03-12
+bgImgDark: '/bg2_dark.jpg'
+
 ---
 
 

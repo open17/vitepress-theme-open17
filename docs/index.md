@@ -16,7 +16,7 @@ hero:
       text: 主题文档
       link: /blog-docs/0-intro/
     - theme: brand
-      text: 博客Demo
+      text: Live Demo
       link: /page/demo
     - theme: alt
       text: Vitepress文档
@@ -37,3 +37,6 @@ features:
     linkText: "点击跳转"
 ---
 
+<br>
+<br>
+<br>

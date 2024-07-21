@@ -2,11 +2,11 @@
 layout: blog
 lastUpdated: false
 bgImg: "/bg2.jpg"
-bgImgDark: '/bg_dark.jpg'
+bgImgDark: '/bg2_dark.jpg'
 widgets:
-  - name: "🍰广告时间"
+  - name: "🍰 更多示例"
     link: "/blog-docs/1-config/0-home.html#自定义组件栏"
-    html: "主题博客示例<br><br><div id='custom1'></div>"
+    html: "我的博客~<br><br><div id='custom1'></div>"
 ---
 
 <script setup>
@@ -15,7 +15,7 @@ import { onMounted, createApp,h } from 'vue';
 const blog=[
     {
         img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080238501.png',
-        desc:'算法练习,笔记与模板',
+        desc:'我滴博客',
         url:'https://www.open17.vip'
     },
 ];

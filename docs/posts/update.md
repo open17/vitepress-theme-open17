@@ -1,9 +1,10 @@
 ---
 tags:
-    - theme
+    - 主题
     - 更新
-title: 更新公告
+title: 更新公告[置顶]
 pin: true
+date: 2024-01-01
 ---
 
 这里是博客的更新公告
