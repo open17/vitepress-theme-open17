@@ -1,7 +1,3 @@
-<p align="center">
-<img src="https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071712279.png" width="100%"/>
-</p>
-
 # vitepress-theme-open17
 <a href="https://www.npmjs.com/package/vitepress-theme-open17" target="_blank"><img src="https://img.shields.io/npm/v/vitepress-theme-open17.svg?style=flat-square&amp;logo=npm" alt="npm" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/" target="_blank"><img src="https://img.shields.io/badge/GitHub-open17-26A2FF?style=flat-square&amp;logo=github" alt="github" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/blob/template/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="license" style="display: inline; margin: 0px;"></a><br/>  
 
@@ -15,6 +11,7 @@
 
 - 博客主页
 - 标签分类
+- 评论系统
 - 支持归档页布局
 - 支持博客摘要与置顶
 - 支持展示头像,昵称,签名
@@ -36,7 +33,7 @@
 
 - [x] 更多样式配置
 - [x] 博客首页
-- [ ] 博客评论系统
+- [x] 博客评论系统
 - [x] RSS订阅
 - [x] 标签页
 - [x] 归档页
