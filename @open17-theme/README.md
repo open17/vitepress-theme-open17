@@ -9,7 +9,6 @@
 
 - [主题文档](https://alg.open17.vip/blog-docs/0-intro/)
 - [博客demo](https://alg.open17.vip/page/demo.html)
-- [更多示例](https://alg.open17.vip/posts/example.html)
 
 ## Feature
 

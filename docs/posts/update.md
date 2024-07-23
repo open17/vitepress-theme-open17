@@ -5,6 +5,7 @@ tags:
 title: 更新公告[置顶]
 pin: true
 date: 2024-01-01
+comment: false
 ---
 
 这里是博客的更新公告

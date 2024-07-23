@@ -1,7 +1,5 @@
 # 基础指南
 
-![logo](https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071712279.png)
-
 ## :art: 介绍 
 
 <a href="https://www.npmjs.com/package/vitepress-theme-open17" target="_blank"><img src="https://img.shields.io/npm/v/vitepress-theme-open17.svg?style=flat-square&amp;logo=npm" alt="npm" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/" target="_blank"><img src="https://img.shields.io/badge/GitHub-open17-26A2FF?style=flat-square&amp;logo=github" alt="github" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/blob/template/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="license" style="display: inline; margin: 0px;"></a><br/>  

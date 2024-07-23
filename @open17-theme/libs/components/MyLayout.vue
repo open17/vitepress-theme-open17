@@ -1,23 +1,35 @@
 <template>
     <!-- loading -->
-    <Transition><div id="Loading" v-if="isLoading"></div></Transition>
-    
-    <Layout class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})`}"
-    :class="{'loadingStyle':isLoading}"
-    >
+    <Transition>
+        <div id="Loading" v-if="isLoading"></div>
+    </Transition>
+
+    <Layout class=" bg-no-repeat bg-center bg-fixed bg-cover" :style="{ 'background-image': `url(${getImg()})` }"
+        :class="{ 'loadingStyle': isLoading }">
         <template #doc-before>
             <div class="text-3xl font-bold">{{ frontmatter.title }}</div>
         </template>
         <template #doc-after>
             <!-- 评论 -->
+            <div class="comment mt-5" v-if="useComment">
+                <Giscus 
+                    :repo="theme.comment.repo" :repo-id="theme.comment.repo_id" :category="theme.comment.category"
+                    :category-id="theme.comment.category_id" :mapping="theme.comment.mapping" 
+                    :strict="theme.comment.strict" :reactions-enabled="theme.comment.reactions_enabled"
+                    :emit-metadata="theme.comment.emit_metadata" 
+                    :input-position="theme.comment.input_position" 
+                    :lang="theme.comment.lang"
+                    :theme="commentTheme" />
+            </div>
         </template>
     </Layout>
 </template>
 
 <script setup>
+import Giscus from '@giscus/vue'
 import DefaultTheme from 'vitepress/theme'
 import { useData } from "vitepress";
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref, watch, computed } from 'vue';
 const { frontmatter, isDark, theme } = useData();
 const { Layout } = DefaultTheme;
 
@@ -57,10 +69,17 @@ const getImg = () => {
     return null;
 }
 
+const useComment = computed(() => {
+    if(frontmatter.value.comment==false)return false;
+    if(theme.value.comment&&theme.value.comment.use==true)return true;
+    if(frontmatter.value.comment)return true;
+});
 
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
+const commentTheme = computed(() => {
+    return isDark.value ? "dark_tritanopia" : "light_tritanopia";
+});
+
+
 </script>
 
 <style>
@@ -111,11 +130,11 @@ const getImg = () => {
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .v-enter-from,
 .v-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
 </style>

@@ -55,6 +55,19 @@ export default defineConfig({
       pageSize: 4,
       tagPageLink: '/page/tags',
     },
+    comment: {
+      use: true,
+      repo: "open17/vitepress-theme-open17",
+      repo_id: "R_kgDOLkFVUg",
+      category: "Announcements",
+      category_id: "DIC_kwDOLkFVUs4ChFZx", 
+      mapping: "pathname", 
+      strict: "0", 
+      reactions_enabled: "1",
+      emit_metadata: "0", 
+      input_position: "top",
+      lang:"en"
+    },
     logo: {
       dark: '/logo.png',
       light: '/logo_light.png'
@@ -70,12 +83,12 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       {
         text: 'Demo', items: [
-          { text: 'Home', link: '/page/demo' },
+          { text: 'Blogs', link: '/page/demo' },
           { text: 'Tags', link: '/page/tags' },
           { text: 'Archive', link: ' /page/archive' },
         ],
       },
-      { text: 'Example', link: '/posts/example' }
+      // { text: 'Example', link: '/posts/example' }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/open17/vitepress-theme-open17/' }

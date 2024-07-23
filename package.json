@@ -9,6 +9,7 @@
     "preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "feed": "^4.2.2",
     "markdown-it-mathjax3": "^4.3.2",
