@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "vitepress": "^1.0.1"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs --port 8090",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@giscus/vue": "^3.0.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "feed": "^4.2.2",
+    "markdown-it-mathjax3": "^4.3.2",
+    "vite": "^5.2.6",
+    "vitepress-sidebar": "^1.22.0",
+    "vitepress-theme-open17": "^1.1.3",
+    "vue": "^3.4.21"
+  }
+}

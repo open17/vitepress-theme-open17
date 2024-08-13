@@ -1,17 +1,19 @@
-# vitepress-theme-open17
+# 基础指南
+
+## :art: 介绍 
+
 <a href="https://www.npmjs.com/package/vitepress-theme-open17" target="_blank"><img src="https://img.shields.io/npm/v/vitepress-theme-open17.svg?style=flat-square&amp;logo=npm" alt="npm" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/" target="_blank"><img src="https://img.shields.io/badge/GitHub-open17-26A2FF?style=flat-square&amp;logo=github" alt="github" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/blob/template/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="license" style="display: inline; margin: 0px;"></a><br/>  
 
-## 在线查看
+open17是一款简单美观的博客主题,继承于vitepress默认主题
 
-- [主题文档](https://alg.open17.vip/blog-docs/0-intro/)
-- [博客demo](https://alg.open17.vip/page/demo.html)
-- [更多示例](https://alg.open17.vip/posts/example.html)
+支持**全部**vitepress配置项与默认主题功能,相关配置请见[官方文档](https://vitepress.dev/)
 
-## Feature
+本主题在默认主题的基础上加入了简洁美观的博客功能
+
+## :stars: 特征
 
 - 博客主页
 - 标签分类
-- 评论系统
 - 支持归档页布局
 - 支持博客摘要与置顶
 - 支持展示头像,昵称,签名
@@ -22,32 +24,6 @@
 - 支持tailwindcss
 - 支持自定义博客组件
 - ...
-
-## 示例图片
-![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080215743.png)
-![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080216780.png)
-
-如果觉得这个主题不错的话,欢迎给我一个star,你的支持是我更新的动力!
-
-## 预期更新
-
-- [x] 更多样式配置
-- [x] 博客首页
-- [x] 博客评论系统
-- [x] RSS订阅
-- [x] 标签页
-- [x] 归档页
-- [x] 文章注入title
-- [x] 自动引入博客
-- [x] 置顶博客
-- [x] 分页
-- [x] 独立出主题部分发布npm
-- [x] 移动端优化
-- [x] cdn资源转本地
-- [ ] 支持可选的幻灯片功能
-- [ ] 支持可选的markdown增强
-- [x] 自定义主页小组件
-
 
 ## :blue_heart: 鸣谢
 
