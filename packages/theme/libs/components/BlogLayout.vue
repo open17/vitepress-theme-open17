@@ -2,19 +2,22 @@
 import { data as posts } from '../posts.data.js'
 import { useData, withBase } from "vitepress";
 import { computed, ref, onMounted } from 'vue';
+import IconMore from './icon/IconMore.vue'
+import IconLink from './icon/IconLink.vue';
 
 const props = defineProps({
     showContent: Boolean,
 })
-const { theme,frontmatter } = useData();
+const { theme, frontmatter } = useData();
 
 
 
 const blogConfig = theme.value.blog;
 
-const widgets=[...(blogConfig.widgets||[]),...(frontmatter.value.widgets||[])];
+const widgets = [...(blogConfig.widgets || []), ...(frontmatter.value.widgets || [])];
 
-console.log(widgets);
+const direct = blogConfig.direct || "lft";
+
 
 let Tags = ref({ '': posts.length });
 
@@ -48,15 +51,21 @@ const getTagArray = () => {
 </script>
 
 <template>
-    <div class="flex w-full md:flex-row justify-center items-start pt-0 my-0 gap-5 flex-col">
-        <!-- 博客信息 -->
-        <div class="flex bg-transparent w-full md:w-[20rem] justify-center items-start py-16 flex-col gap-5">
+    <div class="flex w-full justify-center items-start pt-0 my-0 gap-5 md:px-20 flex-col-reverse"
+        :class="{ 'md:flex-row': direct == 'lft', 'md:flex-row-reverse': direct == 'rgt' }">
+        <!-- 博客侧边栏 -->
+        <div class="flex bg-transparent w-full md:w-1/4 justify-center items-start py-16 flex-col gap-5">
+            <!-- 电脑端个人信息 -->
             <div
-                class="flex w-full md:rounded-xl p-5 flex-col justify-center items-center gap-3 dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
+                class="hidden md:flex w-full md:rounded-xl p-5 flex-col justify-center items-center gap-3 dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
+                <!-- 头像 -->
                 <img :src="blogConfig.avatar" v-if="blogConfig.avatar" alt="avatar"
-                    class=" object-cover object-center w-full rounded-xl" />
-                <div class="text-xl font-bold text-center">{{ blogConfig.title }}</div>
-                <div class="text-center">{{ blogConfig.desc }}</div>
+                    class=" object-cover object-center w-full rounded-xl " />
+                <div class="mt-3" v-else></div>
+                <!-- 昵称 -->
+                <div class="text-xl font-bold text-center mb-2 mt-2">{{ blogConfig.title }}</div>
+                <!-- 签名 -->
+                <div class="text-center mb-2 text-sm">{{ blogConfig.desc }}</div>
                 <!-- 统计信息 -->
                 <div class="flex justify-center items-center gap-20 w-full border-t-2 pt-5 border-dashed mt-2">
                     <div class="flex flex-col justify-center items-center gap-1">
@@ -70,19 +79,17 @@ const getTagArray = () => {
                 </div>
 
             </div>
-
+            <!-- 侧边栏Tag -->
             <div
-                class="flex w-full md:rounded-xl p-10 flex-col justify-center  gap-5 dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
+                class="flex w-full md:rounded-xl p-10 flex-col justify-center gap-5 dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
+                <!-- 标题 -->
                 <div class=" flex w-full justify-between items-center">
                     <div class="text-xl font-bold">Tags</div>
                     <a v-if="blogConfig.tagPageLink" :href="blogConfig.tagPageLink">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>
+                        <IconMore />
                     </a>
                 </div>
+                <!-- Tags -->
                 <div class="flex justify-center items-center flex-wrap gap-3 flex-col">
                     <div v-for="(tag, i) in getTagArray()" class="w-full py-1 cursor-pointer border-b-2 tag relative flex justify-between items-center hover:border-[var(--vp-c-brand-1)] 
                          " :class="{ 'border-[var(--vp-c-brand-1)]': activeTag === tag[0] }"
@@ -93,32 +100,36 @@ const getTagArray = () => {
                     </div>
                 </div>
             </div>
-
             <!-- 用户自定义组件 -->
             <div v-for="widget in widgets"
-                class="flex w-full md:rounded-xl p-10 flex-col justify-center  gap-5 dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
+                class="flex w-full md:rounded-xl p-10 flex-col justify-center gap-5 dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
                 <div class=" flex w-full justify-between items-center">
                     <div class="text-xl font-bold">{{ widget.name }}</div>
                     <a v-if="widget.link" :href="widget.link">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                        </svg>
+                        <IconLink />
                     </a>
                 </div>
                 <div v-html="widget.html" class="w-full relative"></div>
+
             </div>
-
-
         </div>
         <!-- 博客文章 -->
-        <div class="flex md:w-7/12 py-20 justify-center items-center gap-5 flex-col w-full">
+        <div class="flex md:w-3/4 py-20 justify-center items-center gap-5 flex-col w-full px-3">
             <slot :activeTag="activeTag" />
         </div>
 
+        <!-- 移动端个人信息显示 -->
+        <div class="flex md:hidden justify-center items-center w-full mt-10 flex-col gap-3">
+            <img :src="blogConfig.avatar" v-if="blogConfig.avatar" alt="avatar"
+                class=" object-cover object-center w-32 rounded-full" />
+            <!-- 昵称 -->
+            <div class="text-2xl font-bold text-center">{{ blogConfig.title }}</div>
+            <!-- 签名 -->
+            <div class="text-center text-sm">{{ blogConfig.desc }}</div>
+        </div>
+
     </div>
-    <Content v-if="showContent"/> 
+    <Content v-if="showContent" />
 </template>
 
 <style>

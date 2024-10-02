@@ -44,7 +44,7 @@ themeConfig:{
       widgets:[
         {
           name:"Custom", // 自定义链接名称
-          link:'/blog-docs/',  //可以为空,非空会显示对应的链接
+          link:'/guide/',  //可以为空,非空会显示对应的链接
           html:`主题自定义组件,支持html渲染`, //内容html,支持tailwindcss
         },
         {
@@ -59,7 +59,7 @@ themeConfig:{
 ---
 widgets:
   - name:"Custom"
-    link:'/blog-docs/'
+    link:'/guide/'
     html:`主题自定义组件,支持html渲染`
   - name:"Custom2"
     html:`主题自定义组件,支持html渲染`
@@ -75,7 +75,7 @@ widgets:
 widgets:[
   {
     name:"Custom",
-    link:'/blog-docs/1-config/0-home.html#自定义组件栏',
+    link:'/guide/1-config/0-home.html#自定义组件栏',
     html:`<div id="custom1"></div>`,
   },
 ]
@@ -107,7 +107,7 @@ onMounted(() => {
 layout: blog
 widgets:
   - name: "🍰示例"
-    link: "/blog-docs/1-config/0-home.html#自定义组件栏"
+    link: "/guide/1-config/0-home.html#自定义组件栏"
     html: "<div id='custom1'></div>"
 ---
 

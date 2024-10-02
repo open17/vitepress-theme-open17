@@ -39,7 +39,7 @@ const grouped = {};
 const sortedPosts = [...posts].sort((a, b) => {
   const dateA = new Date(a.frontmatter.date);
   const dateB = new Date(b.frontmatter.date);
-  return dateB - dateA;
+  return dateA - dateB;
 });
 
 

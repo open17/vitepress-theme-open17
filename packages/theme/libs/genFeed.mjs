@@ -3,6 +3,7 @@ import { writeFileSync } from 'fs'
 import { Feed } from 'feed'
 import { createContentLoader} from 'vitepress'
 
+
 export async function genFeed(config) {
   const feed = new Feed({
     title: `${config.site.title}`,
@@ -40,6 +41,5 @@ export async function genFeed(config) {
       date: frontmatter.date
     })
   }
-
-  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2())
+  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2(), { encoding: 'utf8' });
 }

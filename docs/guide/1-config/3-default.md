@@ -13,4 +13,4 @@ export default defineConfig({
 
 默认配置如下:
 
-<<< @/../@open17-theme/libs/config.mjs {js}
+<<< @/../packages/theme/libs/config.mjs {js}

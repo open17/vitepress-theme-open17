@@ -11,15 +11,12 @@
         </template>
         <template #doc-after>
             <!-- 评论 -->
-            <div class="comment mt-5" v-if="useComment">
-                <Giscus 
-                    :repo="theme.comment.repo" :repo-id="theme.comment.repo_id" :category="theme.comment.category"
-                    :category-id="theme.comment.category_id" :mapping="theme.comment.mapping" 
+            <div class="comment mt-5" v-if="useComment && showComment">
+                <Giscus :repo="theme.comment.repo" :repo-id="theme.comment.repo_id" :category="theme.comment.category"
+                    :category-id="theme.comment.category_id" :mapping="theme.comment.mapping"
                     :strict="theme.comment.strict" :reactions-enabled="theme.comment.reactions_enabled"
-                    :emit-metadata="theme.comment.emit_metadata" 
-                    :input-position="theme.comment.input_position" 
-                    :lang="theme.comment.lang"
-                    :theme="commentTheme" />
+                    :emit-metadata="theme.comment.emit_metadata" :input-position="theme.comment.input_position"
+                    :lang="theme.comment.lang" :theme="commentTheme" />
             </div>
         </template>
     </Layout>
@@ -28,8 +25,8 @@
 <script setup>
 import Giscus from '@giscus/vue'
 import DefaultTheme from 'vitepress/theme'
-import { useData } from "vitepress";
-import { onMounted, ref, watch, computed } from 'vue';
+import { useData, useRoute } from "vitepress";
+import { onMounted, ref, watch, computed, nextTick } from 'vue';
 const { frontmatter, isDark, theme } = useData();
 const { Layout } = DefaultTheme;
 
@@ -37,7 +34,6 @@ const isLoading = ref(true);
 const isBlogTop = ref(frontmatter.value.layout === 'blog');
 
 const bgImg = ref(null);
-
 
 onMounted(() => {
     import('../../tailwind').then(() => {
@@ -70,15 +66,31 @@ const getImg = () => {
 }
 
 const useComment = computed(() => {
-    if(frontmatter.value.comment==false)return false;
-    if(theme.value.comment&&theme.value.comment.use==true)return true;
-    if(frontmatter.value.comment)return true;
+    if (frontmatter.value.comment == false) return false;
+    if (theme.value.comment && theme.value.comment.use == true) return true;
+    if (frontmatter.value.comment) return true;
 });
 
 const commentTheme = computed(() => {
     return isDark.value ? "dark_tritanopia" : "light_tritanopia";
 });
 
+
+// 参考 https://github.com/ATQQ/sugar-blog/blob/master/packages/theme/src/components/CommentGiscus.vue
+const route = useRoute();
+const showComment = ref(false);
+watch(
+    route,
+    () => {
+        showComment.value = false
+        nextTick(() => {
+            showComment.value = true
+        })
+    },
+    {
+        immediate: true
+    }
+);
 
 </script>
 

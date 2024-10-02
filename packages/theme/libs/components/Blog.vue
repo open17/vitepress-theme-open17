@@ -51,23 +51,38 @@ const filteredList = (activeTag) => {
 <template>
     <BlogLayout v-slot="{ activeTag }" :showContent="true">
         <div class="w-full flex justify-center items-center relative" v-for="post of paginatedPosts(activeTag)">
-            <div class="flex justify-center items-start md:rounded-xl min-h-32 w-full flex-col gap-5 px-5 md:px-16 py-6 md:py-12
+            <a :href="withBase(post.url)" class="w-full">
+                <div class="flex justify-start items-start rounded-xl min-h-36 w-full flex-col gap-5 md:gap-2 px-6 md:px-10 py-8 md:py-8
                      bg-opacity-90 backdrop-blur-sm
-                    dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)]">
-                <div :class="{ 'border-l-[--vp-c-red-2]': post.frontmatter.pin,'border-l-[var(--vp-c-brand-1)]':!post.frontmatter.pin }"
-                    class="text-3xl font-bold hover:underline underline-offset-8 text-center flex items-center gap-1 border-l-4 pl-6 relative right-6">
-                    <a :href="withBase(post.url)">{{ post.frontmatter.title }}</a>
-                </div>
-                <div v-html="post.excerpt || post.frontmatter.desc" class=" text-lg"></div>
-                <div class="flex justify-between w-full items-center flex-wrap">
-                    <span class="text-[var(--vp-c-text-3)]">{{ post.frontmatter.date.substring(0, 10) }}</span>
-                    <div class="flex justify-end items-end gap-2">
-                        <div class="text-[var(--vp-c-brand-1)]" v-for="(tag, idx) in post.frontmatter.tags">{{
-                            idx === post.frontmatter.tags.length - 1 ? tag : tag + ',' }}</div>
+                    dark:shadow-none shadow-0 bg-[var(--vp-c-bg-soft)] relative">
+                    <!-- 置顶小三角 -->
+                    <div class=" z-20 absolute top-0 left-0 w-0 h-0 border-t-[1.5rem] border-r-transparent border-r-[1.5rem] border-[var(--vp-c-brand-1)]"
+                        v-if="post.frontmatter.pin"></div>
+                    <!-- 文章图片 -->
+                    <div class="w-full md:h-64 md:-mb-2 h-48 -mb-6" v-if="post.frontmatter.img">
+                        <img :src="post.frontmatter.img" alt=""
+                            class=" absolute top-0 left-0 rounded-t-xl w-full h-48 md:h-64 object-cover">
+                    </div>
+                    <!-- 标题 -->
+                    <div class="text-xl font-bold ">
+                        <span>{{ post.frontmatter.title }}</span>
+                    </div>
+                    <!-- 摘要 -->
+                    <div v-html="post.excerpt || post.frontmatter.desc" class=" text-sm mt-2"></div>
+                    <!-- 文章信息 -->
+                    <div class="flex justify-end w-full items-center flex-wrap text-sm gap-2">
+
+                        <div class="flex justify-end items-end gap-1">
+                            <div v-for="(tag, idx) in post.frontmatter.tags">{{
+                                idx === post.frontmatter.tags.length - 1 ? tag : tag + ' · ' }}</div>
+                        </div>
+                        <div class="">|</div>
+                        <div>{{ post.frontmatter.date.substring(0, 10) }}</div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
+        <!-- 分页 -->
         <div class="flex justify-center items-center gap-2 border-0 flex-row bg-t">
             <div @click="changePage(i)" v-for="i in totalPage" v-if="totalPage > 1"
                 class="border-2 w-7 h-7 text-center flex justify-center items-center cursor-pointer  border-[var(--vp-c-brand-1)]"

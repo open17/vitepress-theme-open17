@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 
-
 export default defineConfig({
     title: "Vitepress Open17",
     description: "A VitePress Site",
@@ -14,7 +13,8 @@ export default defineConfig({
         },
         blog: {
             title: "My Awesome Blog",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            direct:'rgt'
         },
-    }
+    },
 })

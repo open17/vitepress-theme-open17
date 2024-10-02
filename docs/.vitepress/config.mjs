@@ -6,8 +6,8 @@ import { generateSidebar } from 'vitepress-sidebar';
 
 const vitepressSidebarOptions = [{
   documentRootPath: 'docs',
-  scanStartPath: 'blog-docs',
-  resolvePath: '/blog-docs/',
+  scanStartPath: 'guide',
+  resolvePath: '/guide/',
   collapsed: true,
   useTitleFromFileHeading: true,
   useFolderTitleFromIndexFile: true,

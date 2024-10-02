@@ -22,7 +22,7 @@ export default defineConfig({
   extends: baseConfig,
 })
 ``` 
-详见[默认配置](/blog-docs/1-config/3-default.html)
+详见[默认配置](/guide/1-config/3-default.html)
 
 ## 背景图片设置
 
@@ -36,7 +36,7 @@ bgImgDark:"xxxx"
 ---
 ```
 
-详见[装饰模式配置](/blog-docs/1-config/1-ornateStyle)
+详见[装饰模式配置](/guide/1-config/1-ornateStyle)
 
 ## Markdown引入
 
@@ -73,7 +73,7 @@ pin: true
 
 本主题支持RSS,配置如下,会在build的时候生成路径为`baseUrl+feed.rss`
 
-详见[RSS](/blog-docs/1-config/4-rss)
+详见[RSS](/guide/1-config/4-rss)
 
 ## Sitemap
 
@@ -158,7 +158,7 @@ This is a details block.
 
 ## 自定义首页组件
 
-详见[这里](/blog-docs/1-config/0-home.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%A0%8F)
+详见[这里](/guide/1-config/0-home.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%A0%8F)
 
 ## 自动侧边栏
 
