@@ -41,7 +41,7 @@ export default defineConfig({
   themeConfig: {
     sidebar: generateSidebar(vitepressSidebarOptions),
     editLink: {
-      pattern: 'https://github.com/open17/vitepress-theme-open17/edit/template/docs/:path'
+      pattern: 'https://github.com/open17/vitepress-theme-open17/edit/master/docs/:path'
     },
     feed: {
       baseUrl: "https://vitepress.open17.vip",
