@@ -1,3 +1,14 @@
+## v1.2.0(2024-10-03)
+
+### Performance Improvements
+- 美化主题
+- 移动端优化
+- 支持博客图片
+- 支持修改侧边栏布局位置
+
+### Bug Fixes
+- 修复评论区刷新问题
+
 ## v1.1.1(2024-05-08)
 ### Performance Improvements
 - 支持在博客布局中渲染markdown
