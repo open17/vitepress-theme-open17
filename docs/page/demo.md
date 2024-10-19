@@ -4,31 +4,39 @@ lastUpdated: false
 bgImg: "/bg2.jpg"
 bgImgDark: '/bg2_dark.jpg'
 widgets:
-  - name: "🍰 更多示例"
+  - name: "音乐播放器"
     link: "/blog-docs/1-config/0-home.html#自定义组件栏"
-    html: "我的博客~<br><br><div id='custom1'></div>"
+    html: "<div id='custom1'></div>"
 ---
 
 <script setup>
-import BlogCard from '../components/BlogCard.vue'
-import { onMounted, createApp,h } from 'vue';
-const blog=[
-    {
-        img:'https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080238501.png',
-        desc:'我滴博客',
-        url:'https://www.open17.vip'
-    },
-];
-onMounted(() => {
-    const el = document.getElementById('custom1');
-    const app = createApp({
-      render() {
-        return h(BlogCard, {
-          blog: blog
-        });
-      }
+import { onMounted, onUnmounted, ref } from 'vue';
+import 'APlayer/dist/APlayer.min.css';
+onMounted(async () => {
+    const APlayer = (await import('APlayer')).default;
+    const ap = new APlayer({
+        container: document.getElementById('custom1'),
+        theme:'var(--vp-c-brand-1)',
+        audio: [{
+            name: '孤独患者',
+            artist: '陈奕迅',
+            url: 'http://music.163.com/song/media/outer/url?id=64093.mp3',
+            cover: 'http://p1.music.126.net/1qr8a9G8pWEMoruLJaBv8A==/109951169014564421.jpg?param=640y300'
+        },
+        {
+            title: '泪桥',
+            author: 'AI陶喆 / 伍佰',
+            url: 'http://music.163.com/song/media/outer/url?id=2602320199.mp3',
+            pic: 'https://p1.music.126.net/yhIdL8Ez0tCvTN1BCYNePQ==/109951169670480040.jpg?param=300x300'
+        },
+        {
+            title: '打上花火',
+            author: 'Daoko / 米津玄師',
+            url: 'http://music.163.com/song/media/outer/url?id=496869422.mp3',
+            pic: 'http://p2.music.126.net/ZUCE_1Tl_hkbtamKmSNXEg==/109951163009282836.jpg?param=300x300'
+        },]
     });
-    app.mount(el);
 });
 </script>
+
 

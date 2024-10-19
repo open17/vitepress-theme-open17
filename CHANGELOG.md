@@ -1,3 +1,10 @@
+## v1.2.1(2024-10-03)
+
+### Performance Improvements
+- 分页
+- 大屏显示
+
+
 ## v1.2.0(2024-10-03)
 
 ### Performance Improvements

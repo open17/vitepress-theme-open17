@@ -49,10 +49,10 @@ export default defineConfig({
       image: "https://cdn.jsdelivr.net/gh/open17/Pic/img/202405071726176.png",
     },
     blog: {
-      avatar: "https://avatars.githubusercontent.com/u/125687556?v=4",
+      avatar: "/ava.jpg",
       ornateStyle: true,
       maxTags: 5,
-      pageSize: 4,
+      pageSize: 5,
       tagPageLink: '/page/tags',
     },
     comment: {
@@ -81,14 +81,14 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/0-intro/' },
+      { text: 'Demo', link: '/page/demo' },
       {
-        text: 'Demo', items: [
-          { text: 'Blogs', link: '/page/demo' },
+        text: 'Others', items: [
           { text: 'Tags', link: '/page/tags' },
           { text: 'Archive', link: ' /page/archive' },
         ],
       },
-      // { text: 'Example', link: '/posts/example' }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/open17/vitepress-theme-open17/' }

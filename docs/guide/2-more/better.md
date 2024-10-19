@@ -148,8 +148,6 @@ This is a details block.
 
 ## 导入代码片段
 
-我的[算法仓库](https://alg.open17.vip)基本上依赖于这个功能
-
 详见[import-code-snippets](https://vitepress.dev/guide/markdown#import-code-snippets)
 
 ## 置顶博客文章
@@ -185,4 +183,10 @@ vite: {
     ]
   },
 ```
+
+## 幻灯片
+
+可以参考这篇博客:
+
+- [在vitepress中使用幻灯片](https://www.open17.vip/posts/project/2024-10-15-vitepress-reveal.html)
 

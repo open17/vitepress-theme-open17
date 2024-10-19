@@ -1,30 +1,19 @@
-/**
- * Component: Home
- * -------------------------------------------------------------------------- */
-
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #4778d5 30%,
-    #41d1ff
-  );
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #47cbff83 50%,
-    #47cbff83 50%
-  );
-/* 
-  --vp-home-hero-image-background-image: none; */
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg,
+      #4778d5 30%,
+      #41d1ff);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg,
+      #47cbff83 50%,
+      #47cbff83 50%);
+
   --vp-home-hero-image-filter: blur(44px);
 }
 
-.dark:root{
-    --vp-home-hero-image-background-image: linear-gradient(
-    -90deg,
-    #3477fe 50%,
-    #3477fe 50%
-  );
+.dark:root {
+  --vp-home-hero-image-background-image: linear-gradient(-90deg,
+      #3477fe 50%,
+      #3477fe 50%);
 }
 
 @media (min-width: 640px) {
@@ -39,6 +28,16 @@
   }
 }
 
-hr{
+hr {
   display: none;
+}
+
+.aplayer {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+  border-radius: 0.75rem !important;
+}
+
+.aplayer{
+  color: rgb(60, 60, 67) !important;
 }
