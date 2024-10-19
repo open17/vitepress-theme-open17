@@ -27,8 +27,8 @@ img: https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335721.jpg
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
-import 'APlayer/dist/APlayer.min.css';
 onMounted(async () => {
+    await import('APlayer/dist/APlayer.min.css');
     const APlayer = (await import('APlayer')).default;
     const ap = new APlayer({
         container: document.getElementById('custom1'),
@@ -80,9 +80,9 @@ widgets:
 ```vue
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
-import 'APlayer/dist/APlayer.min.css';
-import APlayer from 'APlayer';
-onMounted(() => {
+onMounted(async () => {
+    await import('APlayer/dist/APlayer.min.css');
+    const APlayer = (await import('APlayer')).default;
     const ap = new APlayer({
         container: document.getElementById('custom1'),
         theme:'var(--vp-c-brand-1)',
@@ -140,9 +140,9 @@ widgets:
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
-import 'APlayer/dist/APlayer.min.css';
-import APlayer from 'APlayer';
-onMounted(() => {
+onMounted(async () => {
+    await import('APlayer/dist/APlayer.min.css');
+    const APlayer = (await import('APlayer')).default;
     const ap = new APlayer({
         container: document.getElementById('custom1'),
         theme:'var(--vp-c-brand-1)',

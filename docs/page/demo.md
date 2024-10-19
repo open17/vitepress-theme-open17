@@ -11,8 +11,8 @@ widgets:
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
-import 'APlayer/dist/APlayer.min.css';
 onMounted(async () => {
+    await import('APlayer/dist/APlayer.min.css');
     const APlayer = (await import('APlayer')).default;
     const ap = new APlayer({
         container: document.getElementById('custom1'),
