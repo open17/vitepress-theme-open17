@@ -14,7 +14,7 @@
     "aplayer": "^1.10.1",
     "feed": "^4.2.2",
     "markdown-it-mathjax3": "^4.3.2",
-    "vite": "^5.2.6",
+    "vite": "^5.2.14",
     "vitepress-sidebar": "^1.22.0",
     "vitepress-theme-open17": "^1.2.1",
     "vue": "^3.4.21"
