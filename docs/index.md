@@ -7,11 +7,11 @@ bgImgDark: '/bg_dark.jpg'
 hero:
   name: "Vitepress Open17"
   text: "简单美观的博客主题"
-  tagline: 博客,标签,摘要,归档...
-  # image:
-  #   dark: "/logo.png"
-  #   light: "/logo.png"
-  #   alt: open17
+  tagline: 将 Markdown 变成美观的博客，只需几分钟
+  image:
+    dark: "/vitepress-logo.png"
+    light: "/vitepress-logo.png"
+    alt: open17
   actions:
     - theme: brand
       text: 主题文档
@@ -29,12 +29,12 @@ features:
     details: 兼容vitepress默认配置与功能,无需额外修改,快速迁移你的vitpress站点
     link: "/guide/0-intro/0-start.html"
     linkText: "点击跳转"
-  - title: 博客功能
+  - title: 博客能力增强
     icon: 📑
-    details: 增加博客主页归档页标签页布局,满足常见的博客需求
+    details: 基于vitpress,同时支持常见的博客功能与需求
     link: "/guide/0-intro/1-use.html"
     linkText: "点击跳转"
-  - title: 更多配置
+  - title: 多样化配置
     icon: 🌼
     details: 自定义背景,主题色,RSS,自定义组件...
     link: "/guide/1-config/0-home.html"
