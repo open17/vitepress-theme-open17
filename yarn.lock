@@ -1725,10 +1725,10 @@ vitepress-sidebar@^1.22.0:
   dependencies:
     gray-matter "^4.0.3"
 
-vitepress-theme-open17@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/vitepress-theme-open17/-/vitepress-theme-open17-1.2.1.tgz#3076752b5bef38d1682c707beb627416c0588ca2"
-  integrity sha512-zFWNyKNp+Ovjn3lPT24OA8Gphp+GjJEUxB9CZYsnKGtgtSLskM5pTiAFKU/zeaotY3GKelpTA5AlkFRoogTDXQ==
+vitepress-theme-open17@^1.3.0-beta.1:
+  version "1.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/vitepress-theme-open17/-/vitepress-theme-open17-1.3.0-beta.1.tgz#115d41ca677933e44a8b665a073cb3f9a23ad058"
+  integrity sha512-5EJVfUvvf+kiwBJROBBxm4PMwBNzZ0vzBiinHURYvSc6k0sHz7MmH6asBDvAPATOQWblCgmKRzvwXp0weQraMQ==
   dependencies:
     feed "^4.2.2"
 

@@ -1,3 +1,14 @@
+## v1.3.0-beta.1(2024-11-09)
+
+### Performance Improvements
+
+- 重构代码,美化主题
+- 支持配置时TS类型提示
+- 优化&统一配置名格式与类型
+- 增加用户自定义主题配色的精细度
+- 重构Tag页面和归档页面
+
+
 ## v1.2.1(2024-10-03)
 
 ### Performance Improvements

@@ -1,8 +1,7 @@
-import path from 'path'
-import { writeFileSync } from 'fs'
-import { Feed } from 'feed'
-import { createContentLoader} from 'vitepress'
-
+import path from 'path';
+import { writeFileSync } from 'fs';
+import { Feed } from 'feed';
+import { createContentLoader } from 'vitepress';
 
 export async function genFeed(config) {
   const feed = new Feed({
@@ -13,19 +12,17 @@ export async function genFeed(config) {
     language: `${config.site.lang}`,
     image: `${config.site.themeConfig.feed.image}`,
     favicon: `${config.site.themeConfig.feed.favicon}`,
-    copyright: `${config.site.themeConfig.feed.copyright}`
-  })
+    copyright: `${config.site.themeConfig.feed.copyright}`,
+  });
 
   const posts = await createContentLoader('posts/**/*.md', {
     excerpt: true,
-    render: true
-  }).load()
+    render: true,
+  }).load();
 
   posts.sort(
-    (a, b) =>
-      +new Date(b.frontmatter.date) -
-      +new Date(a.frontmatter.date)
-  )
+    (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
+  );
   for (const { url, excerpt, frontmatter, html } of posts) {
     feed.addItem({
       title: frontmatter.title,
@@ -35,11 +32,13 @@ export async function genFeed(config) {
       content: html?.replaceAll('&ZeroWidthSpace;', ''),
       author: [
         {
-          name: frontmatter.author
-        }
+          name: frontmatter.author,
+        },
       ],
-      date: frontmatter.date
-    })
+      date: frontmatter.date,
+    });
   }
-  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2(), { encoding: 'utf8' });
+  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2(), {
+    encoding: 'utf8',
+  });
 }

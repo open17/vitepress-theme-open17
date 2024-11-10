@@ -1,0 +1,52 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+:root {
+  --vp-c-brand-1: #4b70df;
+  --vp-c-brand-2: #2650dac8;
+  --vp-c-brand-3: #3c83ba;
+  --blog-tag-text-1: #303030cf;
+  --blog-tag-bg-1: #fff;
+  --blog-tag-bg-2: #2650daa4;
+  --blog-tag-text-2: #fff;
+  --blog-time-line-c: #3974e9;
+  --blog-time-line-c2: #787878;
+  --blog-time-line-text: #fff;
+  --blog-time-line-text-bg: #2650daa4;
+  --blog-border-c: rgb(227, 232, 247);
+}
+
+.dark:root {
+  --vp-c-brand-1: #4b95df;
+  --vp-c-brand-2: #198ed2;
+  --vp-c-brand-3: #3c83ba;
+  --blog-tag-bg-2: #4b95df;
+  --blog-tag-text-2: #fff;
+  --blog-tag-bg-1: transparent;
+  --blog-tag-text-1: #fff;
+  --blog-time-line-c: #fff;
+  --blog-time-line-c2: #fff;
+  --blog-border-c: rgb(61, 61, 63);
+}
+
+.dark:root {
+  --vp-c-blog-bg: var(--vp-c-bg-soft);
+}
+
+:root {
+  --vp-c-blog-bg: var(--vp-c-bg);
+}
+
+.custom-block {
+  border: 1.5px solid transparent;
+}
+
+:root {
+  --vp-custom-block-details-border: rgba(142, 150, 170, 0.28);
+  --vp-custom-block-info-border: rgba(142, 150, 170, 0.28);
+  --vp-custom-block-tip-border: rgba(100, 108, 255, 0.28);
+  --vp-custom-block-warning-border: rgba(234, 179, 8, 0.28);
+  --vp-custom-block-danger-border: rgba(244, 63, 94, 0.28);
+}

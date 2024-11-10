@@ -1,11 +1,12 @@
 ---
 layout: blog
 lastUpdated: false
-bgImg: "/bg2.jpg"
-bgImgDark: '/bg2_dark.jpg'
+bgImage:
+  light: "/bg.jpg"
+  dark: "/bg2_dark.jpg"
 widgets:
   - name: "音乐播放器"
-    link: "/blog-docs/1-config/0-home.html#自定义组件栏"
+    link: "/posts/2024-10-17-music-player"
     html: "<div id='custom1'></div>"
 ---
 
@@ -31,12 +32,10 @@ onMounted(async () => {
         },
         {
             title: '打上花火',
-            author: 'Daoko / 米津玄師',
+            author: 'Daoko / 八爷',
             url: 'http://music.163.com/song/media/outer/url?id=496869422.mp3',
             pic: 'http://p2.music.126.net/ZUCE_1Tl_hkbtamKmSNXEg==/109951163009282836.jpg?param=300x300'
         },]
     });
 });
 </script>
-
-

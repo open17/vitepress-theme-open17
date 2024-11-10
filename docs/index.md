@@ -1,8 +1,9 @@
 ---
 layout: home
 lastUpdated: false
-bgImg: "/bg.jpg"
-bgImgDark: '/bg_dark.jpg'
+bgImage: 
+  light: "/bg.jpg"
+  dark: '/bg_dark.jpg'
 
 hero:
   name: "Vitepress Open17"

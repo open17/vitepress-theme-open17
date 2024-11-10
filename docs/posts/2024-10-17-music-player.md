@@ -1,10 +1,10 @@
 ---
-title: 博客小组件-音乐播放器
+title: 食用指南:音乐播放小组件
 date: 2024-10-17
 tags:
-    - 博客
+    - 指南
     - 组件
-    - 音乐播放器
+    - Aplayer
 img: https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335721.jpg
 ---
 
@@ -17,13 +17,13 @@ img: https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335721.jpg
 
 :::tip 说明
 
-由于这里示例音乐链接是网易云的,可能因为网络问题会无法播放
+由于这里示例音乐链接是网易云的,可能会因为非国内网络问题导致无法播放
 
 :::
 
 一款简单美观的音乐播放器:
 
-<div id='custom1'></div>
+<div id='custom1' class="mx-5"></div>
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
@@ -121,13 +121,9 @@ APlayer的更多参数可以参考[APlayer官网](https://aplayer.js.org/)
 }
 ```
 
-## 效果图
-
-![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202410171454995.png)
-
+现在就可以在博客页/标签页等支持widgets配置的布局显示啦!
 
 ## 完整代码
-
 
 ```md
 ---
