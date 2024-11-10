@@ -77,7 +77,7 @@ BBBBBBBBBBBBBBB
 
 同时还会显示头像昵称签名等其他内容,在<Badge type="tip" text="版本1.1.0" />及以后还可以自己添加相关的主页小组件
 
-例如: [博客主页示例](/page/demo)
+例如: [博客主页示例](/page/blog)
 
 对于任意一个vitepress的markdown页面,使用layout配置便可转为博客主页:
 ```md
