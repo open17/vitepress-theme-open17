@@ -1,6 +1,7 @@
 ---
 layout: archive
 lastUpdated: false
-bgImg: "/bg2.jpg"
-bgImgDark: '/bg2_dark.jpg'
+bgImage:
+  light: "/bg.jpg"
+  dark: "/bg2_dark.jpg"
 ---

@@ -108,10 +108,10 @@ export default defineConfigWithTheme<ThemeConfig>({
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/0-intro/" },
-      { text: "Demo", link: "/page/demo" },
       {
-        text: "Others",
+        text: "Demo",
         items: [
+          { text: "Blog", link: "/page/blog" },
           { text: "Tags", link: "/page/tags" },
           { text: "Archive", link: " /page/archive" },
         ],

@@ -19,7 +19,7 @@ hero:
       link: /guide/0-intro/
     - theme: brand
       text: Live Demo
-      link: /page/demo
+      link: /page/blog
     - theme: alt
       text: Vitepress文档
       link: https://vitepress.dev/
