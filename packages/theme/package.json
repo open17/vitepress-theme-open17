@@ -3,10 +3,12 @@
   "types": "./src/types/index.d.ts",
   "typesVersions": {
     "*": {
-      "config": ["src/types/theme.d.ts"]
+      "config": [
+        "src/types/theme.d.ts"
+      ]
     }
   },
-  "version": "1.3.0-beta.1",
+  "version": "1.3.5",
   "exports": {
     ".": "./src/index.ts",
     "./genFeed": "./src/genFeed.mjs",
@@ -19,8 +21,8 @@
   "repository": "https://github.com/open17/vitepress-theme-open17.git",
   "homepage": "https://vitepress.open17.vip",
   "peerDependencies": {
-    "vitepress": "^1.0.1",
-    "@giscus/vue": "^3.0.0"
+    "@giscus/vue": "^3.0.0",
+    "vitepress": "^1.0.1"
   },
   "keywords": [
     "vitepress",
