@@ -2,7 +2,14 @@
 
 推荐使用主题提供的模板,也可以手动开始
 
-## :star: 一键开始 <Badge type="warning" text="推荐" />
+## :star: 一键启动(推荐) <Badge type="warning" text="新增" />
+
+```bash
+# my-blog换为你的项目名
+npm create open17-blog my-blog
+```
+
+## :star: github模板
 
 利用 GitHub Template 一键开始: [点击这里](https://github.com/open17/vitepress-theme-open17/generate)
 

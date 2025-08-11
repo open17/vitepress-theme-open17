@@ -1,3 +1,15 @@
+## v1.3.5(2025-08-11)
+
+### Performance Improvements
+
+- 重构代码,美化主题
+- 优化博客详情页
+- 完善分页功能
+- 优化标签功能
+- 增加分类功能
+
+
+
 ## v1.3.0-beta.1(2024-11-09)
 
 ### Performance Improvements

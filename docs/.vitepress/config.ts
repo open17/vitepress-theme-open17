@@ -71,7 +71,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       tagPageLink: "/page/tags",
       bgImage: { dark: "/bg_dark.jpg" },
       direct: "lft",
-      pageSize: 5, // align with new theme option, fallback still respects home.postsPerPage
+      pageSize: 3, // align with new theme option, fallback still respects home.postsPerPage
       user: {
         name: "Open17",
         avatar: "/ava.jpg",

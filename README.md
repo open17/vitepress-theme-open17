@@ -1,55 +1,172 @@
-# vitepress-theme-open17
-<a href="https://www.npmjs.com/package/vitepress-theme-open17" target="_blank"><img src="https://img.shields.io/npm/v/vitepress-theme-open17.svg?style=flat-square&amp;logo=npm" alt="npm" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/" target="_blank"><img src="https://img.shields.io/badge/GitHub-open17-26A2FF?style=flat-square&amp;logo=github" alt="github" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vitepress-theme-open17/blob/template/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="license" style="display: inline; margin: 0px;"></a><br/>  
+<div align="center">
+  <img src="docs/public/banner.png" alt="VitePress Theme Open17 Banner" style="width: 128px;">
+</div>
 
-## 在线查看
+<div align="center">
 
-- [主题文档](https://alg.open17.vip/blog-docs/0-intro/)
-- [博客demo](https://alg.open17.vip/page/demo.html)
-- [更多示例](https://alg.open17.vip/posts/example.html)
+# VitePress Theme Open17
 
-## Feature
+**让你的博客焕然一新 | 简洁 · 优雅 · 强大**
 
-- 博客主页
-- 标签分类
-- 评论系统
-- 支持归档页布局
-- 支持博客摘要与置顶
-- 支持展示头像,昵称,签名
-- 支持博客分页
-- 支持RSS订阅
-- 兼容默认主题的全部功能与配置
-- 支持背景图自定义替换
-- 支持tailwindcss
-- 支持自定义博客组件
-- ...
+<a href="https://www.npmjs.com/package/vitepress-theme-open17" target="_blank">
+  <img src="https://img.shields.io/npm/v/vitepress-theme-open17.svg?style=flat-square&logo=npm" alt="NPM Version">
+</a>
+<a href="https://github.com/open17/vitepress-theme-open17/" target="_blank">
+  <img src="https://img.shields.io/badge/GitHub-open17-26A2FF?style=flat-square&logo=github" alt="GitHub">
+</a>
+<a href="https://github.com/open17/vitepress-theme-open17/blob/template/LICENSE" target="_blank">
+  <img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="License">
+</a>
+<br>
+<a href="https://vitepress.open17.vip/guide/0-intro/">📚 文档</a> · 
+<a href="https://vitepress.open17.vip/page/demo.html">🚀 演示</a> 
+</div>
 
-## 示例图片
-![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080215743.png)
-![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202405080216780.png)
+---
 
-如果觉得这个主题不错的话,欢迎给我一个star,你的支持是我更新的动力!
+## ✨ 为什么选择 Open17？
 
-## 预期更新
+> **无缝沿用 VitePress 默认配置，轻松构建你的个性化博客**
 
-- [x] 更多样式配置
-- [x] 博客首页
-- [x] 博客评论系统
-- [x] RSS订阅
-- [x] 标签页
-- [x] 归档页
-- [x] 文章注入title
-- [x] 自动引入博客
-- [x] 置顶博客
-- [x] 分页
-- [x] 独立出主题部分发布npm
-- [x] 移动端优化
-- [x] cdn资源转本地
-- [x] 自定义主页小组件
+Open17 是一款专为 VitePress 设计的现代化博客主题，在保持原有强大功能的基础上，为你带来全新的博客体验。
+
+## ⚡ 一键开始
+
+自动安装+配置主题,一行即可!
+
+```bash
+# my-blog换为你的项目名
+npm create open17-blog my-blog
+```
+
+## 🌟 丰富功能一览
+
+<table>
+<tr>
+<td width="50%">
+
+**🏡 博客核心**
+- ✅ 博客主页布局
+- ✅ 文章列表分页
+- ✅ 摘要自动提取
+- ✅ 文章置顶功能
+- ✅ 个人资料卡
+
+</td>
+<td width="50%">
+
+**🏷️ 组织管理**
+- ✅ 标签系统
+- ✅ 分类管理
+- ✅ 归档统计
+- ✅ 全文搜索
+- ✅ RSS 订阅源
+
+</td>
+</tr>
+<tr>
+<td>
+
+**🎨 个性定制**
+- ✅ 自定义配色
+- ✅ 自定义背景
+- ✅ 明暗模式切换
+- ✅ TailwindCSS
+- ✅ 自定义组件
+
+</td>
+<td>
+
+**💬 交互体验**
+- ✅ 评论系统集成
+- ✅ 响应式设计
+- ✅ SEO 优化
+- ✅ Markdown 增强
+- ✅ 默认主题兼容
+
+</td>
+</tr>
+</table>
+
+</div>
+
+## 📸 主题预览
+
+<div align="center">
+  
+**现代化设计 · 优雅的阅读体验**
+
+[🎯 查看在线演示](https://vitepress.open17.vip/page/demo.html)
+
+</div>
+
+## 其他配置方式
+
+> 更推荐使用一键开始命令
+
+### 方式：github模板
+
+使用 GitHub Template 快速创建你的博客：
+
+<div align="center">
+
+[点击一键创建📦](https://github.com/open17/vitepress-theme-open17/generate)
+
+</div>
+
+### 方式：手动安装
+
+```bash
+npm install -D vitepress-theme-open17
+```
+
+然后在 VitePress 主题入口中启用主题:
+```js
+// .vitepress/theme/index.js
+import Theme from 'vitepress-theme-open17'
+export default Theme
+```
+
+使用类型安全的方式编写配置:
+```ts
+// .vitepress/config.ts
+import type { ThemeConfig } from 'vitepress-theme-open17/config'
+import { defineConfigWithTheme } from 'vitepress'
+
+export default defineConfigWithTheme<ThemeConfig>({
+  themeConfig: {
+    // 你的主题配置
+  }
+})
+```
 
 
-## :blue_heart: 鸣谢
 
-- [vitepress](https://vitepress.dev/): 本主题是在vitepress及其默认主题的基础上进行开发
-- [tailwindcss](https://tailwindcss.com/):大大方便了css的书写与开发效率
-- [vuejs/blog](https://github.com/vuejs/blog): vue官方博客,参考了其中一些代码的实现
-- [fuwari](https://github.com/saicaca/fuwari): 一款Astro的博客主题,设计上对我有不小的启发
+## 📚 完整指南
+
+- 📖 [快速开始](https://vitepress.open17.vip/guide/0-intro/0-start.html) - 5分钟上手指南
+- ⚙️ [主题配置](https://vitepress.open17.vip/guide/1-config/) - 详细配置说明
+- 🎨 [样式定制](https://vitepress.open17.vip/guide/1-config/2-style.html) - 打造专属风格
+- 🔧 [进阶使用](https://vitepress.open17.vip/guide/2-more/) - 高级功能探索
+
+## 💝 社区支持
+
+<div align="center">
+
+**如果这个主题对你有帮助，请给我们一个 ⭐**
+
+**你的支持是我们持续更新的最佳动力！**
+
+[🐛反馈问题](https://github.com/open17/vitepress-theme-open17/issues)
+[💡功能建议](https://github.com/open17/vitepress-theme-open17/discussions)
+
+</div>
+
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [open17](https://github.com/open17)**
+
+</div>
