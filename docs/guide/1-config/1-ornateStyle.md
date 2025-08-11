@@ -1,41 +1,44 @@
-# 装饰模式配置
+# 背景图片配置
 
-启用该模式允许为本主题自定义背景
+你可以为页面配置背景图片，支持全局配置和单页面配置。
 
-当前该模式仍处于测试阶段,可能存在部分显示bug
+背景图片支持明暗两种主题，可以分别配置不同的图片。
 
+## 全局背景图片配置
 
-## 基本配置
 ```js
-themeConfig:{
-    blog:{
-      ornateStyle:true,             //是否开启博客装饰样式,默认为false,
-    },
+themeConfig: {
+  blog: {
+    bgImage: "/bg.jpg",               // 单一背景图片
+    // 或者使用明暗主题配置
+    bgImage: { 
+      light: "/bg.jpg",              // 浅色主题背景
+      dark: "/bg_dark.jpg"           // 深色主题背景
+    }
+  }
 }
 ```
 
-## docs布局背景图片
+## 单页面背景图片配置
 
-对于docs布局,我们可以一键替换默认背景图片
-
-```js
-themeConfig:{
-    blog:{
-      bgImg:"xxxx",                  //仅可用于doc文章(包括博客文章)的默认背景图片,可选,当博客装饰样式开启才生效
-      bgImgDark:"xxxx",            //仅可用于doc文章(包括博客文章)的默认背景图片(暗黑模式),可选,当博客装饰样式开启才生效
-    },
-}
-```
-
-## 其他布局背景
-
-对于其他布局,我们也可以通过配置对应的markdown文件来指定背景图片
+在页面的 frontmatter 中配置，优先级高于全局配置：
 
 ```md
 ---
-bgImg:"xxxx" 
-bgImgDark:"xxxx"
+bgImage: "/custom-bg.jpg"           # 单一背景图片
+# 或者使用明暗主题配置
+bgImage:
+  light: "/custom-bg-light.jpg"    # 浅色主题背景
+  dark: "/custom-bg-dark.jpg"      # 深色主题背景
 ---
 ```
+
+## 使用示例
+
+参考本主题的示例页面配置：
+
+- 博客页：/page/blog - 配置了不同的明暗背景
+- 标签页：/page/tags - 使用相同的背景配置
+- 归档页：/page/archive - 统一的背景样式
 
 

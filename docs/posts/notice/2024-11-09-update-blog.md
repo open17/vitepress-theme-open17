@@ -91,8 +91,9 @@ themeConfig: {
       mapping: "pathname",
       strict: "0",
       reactions_enabled: "1",   // [!code --]
-      reactions_enabled: "1",   // [!code ++]
-      emit_metadata: "0",
+      reactionsEnabled: "1",   // [!code ++]
+      emit_metadata: "0",      // [!code --]
+      emitMetadata: "0",       // [!code ++]
       input_position: "top",    // [!code --]
       inputPosition: "top",    // [!code ++]
       lang:"en"

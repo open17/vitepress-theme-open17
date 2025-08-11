@@ -25,6 +25,8 @@ declare namespace Open17Theme {
     widgets?: Array<Open17Theme.WidgetConfig>;
     pureMode?: boolean; // 隐藏左边栏
     user?: Open17Theme.UserCardConfig; // 用户卡片配置
+    // 每页文章数量（优先级高于 home.postsPerPage）
+    pageSize?: number;
   }
 
   // 首页配置

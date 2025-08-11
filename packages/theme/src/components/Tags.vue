@@ -4,10 +4,10 @@
       class="flex w-full flex-col bg-opacity-90 backdrop-blur-sm dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)] rounded-xl py-10 px-10">
       <!-- tags list -->
       <div class="flex justify-left items-center flex-wrap md:mx-10 md:gap-3 gap-2">
-        <span v-for="(num, tag) in Tags" :key="tag" class=" px-2 rounded-sm cursor-pointer border"
+        <span v-for="(num, tag) in tagsMap" :key="tag" class=" px-2 rounded-sm cursor-pointer border"
           :class="{ 'bg-[var(--blog-tag-bg-2)] text-[var(--blog-tag-text-2)] border-[var(--blog-tag-text-2)]': ActiveTag == tag, 'bg-[var(--blog-tag-bg-1)] text-[var(--blog-tag-text-1)] border-[var(--blog-tag-text-1)]': ActiveTag != tag }"
           @click="ActiveTag = tag">
-          {{ tag == '' ? 'All' : tag }}
+          {{ tag == '' ? allText : tag }}
         </span>
       </div>
       <div class="text-2xl w-full text-center border-dashed border-t-2 pt-5 mt-10 mb-5"></div>
@@ -32,36 +32,16 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
-import { data as posts } from '../posts.data.js';
-import { withBase } from 'vitepress';
+import { computed } from 'vue';
+import { withBase, useData } from 'vitepress';
 import ThemeLayout from './ThemeLayout.vue';
+import { getLocalizedString } from '../utils/constants';
+import { useTags } from '../composables/useTags';
 
-let Tags = ref({ '': posts.length });
-let ActiveTag = ref('');
-onMounted(() => {
-  posts.forEach((post) => {
-    const tags = post.frontmatter.tags;
-    if (tags) {
-      tags.forEach((tag) => {
-        if (Tags.value[tag]) {
-          Tags.value[tag]++;
-        } else {
-          Tags.value[tag] = 1;
-        }
-      });
-    }
-  });
-});
+const { lang } = useData();
+const allText = getLocalizedString('all', lang.value);
 
-const filteredList = computed(() => {
-  let list = posts;
-  if (ActiveTag.value) {
-    list = list.filter(
-      (item) =>
-        item.frontmatter.tags && item.frontmatter.tags.includes(ActiveTag.value)
-    );
-  }
-  return list;
-});
+const { tagsMap, activeTag: ActiveTag, filterPostsByActiveTag } = useTags();
+
+const filteredList = computed(() => filterPostsByActiveTag());
 </script>

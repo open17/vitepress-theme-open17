@@ -15,12 +15,12 @@
         <!-- Stats -->
         <div class="flex justify-center items-center gap-20 w-full border-t-2 pt-5 border-dashed mt-2">
             <div class="flex flex-col justify-center items-center gap-1">
-                <div class="text-sm">POSTS</div>
+                <div class="text-sm">{{ postsText }}</div>
                 <div class="text-xl">{{ posts.length }}</div>
             </div>
             <div class="flex flex-col justify-center items-center gap-1">
-                <div class="text-sm">TAGS</div>
-                <div class="text-xl">{{ tagNum }}</div>
+                <div class="text-sm">{{ tagsText }}</div>
+                <div class="text-xl">{{ uniqueTagCount }}</div>
             </div>
         </div>
     </div>
@@ -42,26 +42,18 @@
 import { data as posts } from '../posts.data.js';
 
 import { useData } from 'vitepress';
-import { onMounted, ref, defineProps } from 'vue';
+import { defineProps, computed } from 'vue';
+import { getLocalizedString } from '../utils/constants';
+import { useTags } from '../composables/useTags';
 
-const { theme } = useData<Open17Config>();
+const { theme, lang } = useData<Open17Config>();
 
 const userConfig = theme.value.blog ? theme.value.blog.user : null;
 
-const tagNum = ref<Number>(0);
-const tagSet = new Set<String>();
+const { uniqueTagCount } = useTags();
 
-onMounted(() => {
-    posts.forEach((post: { frontmatter: { tags: Array<string>; }; }) => {
-        const postTags = post.frontmatter.tags;
-        if (postTags) {
-            postTags.forEach((tag: string) => {
-                tagSet.add(tag);
-            });
-        }
-    });
-    tagNum.value = tagSet.size;
-});
+const postsText = computed(() => getLocalizedString('posts', lang.value));
+const tagsText = computed(() => getLocalizedString('tags', lang.value));
 
 const props = defineProps<{
     isMobile: Boolean

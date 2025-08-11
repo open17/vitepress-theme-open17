@@ -71,6 +71,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       tagPageLink: "/page/tags",
       bgImage: { dark: "/bg_dark.jpg" },
       direct: "lft",
+      pageSize: 1, // align with new theme option, fallback still respects home.postsPerPage
       user: {
         name: "Open17",
         avatar: "/ava.jpg",
@@ -113,7 +114,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         items: [
           { text: "Blog", link: "/page/blog" },
           { text: "Tags", link: "/page/tags" },
-          { text: "Archive", link: " /page/archive" },
+          { text: "Archive", link: "/page/archive" },
         ],
       },
     ],
