@@ -1,6 +1,6 @@
 <template>
     <!-- 电脑端 -->
-    <div class="hidden md:flex w-full md:rounded-xl p-5 flex-col justify-center items-center gap-2 dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)]"
+    <div class="hidden md:flex w-full md:rounded-xl p-5 flex-col justify-center items-center gap-2 dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)] opacity-85 backdrop-blur-md"
         v-if="!props.isMobile">
         <!-- Avatar -->
         <img :src="userConfig?.avatar" v-if="userConfig?.avatar" alt="avatar"

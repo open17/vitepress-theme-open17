@@ -127,7 +127,7 @@ const formatDate = (date) => {
     <div class="w-full flex justify-center items-center relative" v-for="post of paginatedPosts()">
       <a :href="withBase(post.url)" class="w-full rounded-xl">
         <div
-          class="  flex justify-center items-start w-full rounded-xl flex-col gap-5 md:gap-2 px-6 md:px-10 py-8 md:py-8 bg-opacity-90 backdrop-blur-sm dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)] relative">
+          class=" bg-opacity-80 backdrop-blur-md flex justify-center items-start w-full rounded-xl flex-col gap-5 md:gap-2 px-6 md:px-10 py-8 md:py-8  dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)] relative">
           <!-- 置顶标识 -->
           <div v-if="post.frontmatter.pin" class=" absolute top-0 left-0 w-0 h-0">
             <div

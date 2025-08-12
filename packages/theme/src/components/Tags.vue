@@ -1,7 +1,7 @@
 <template>
   <ThemeLayout>
     <div
-      class="flex w-full flex-col bg-opacity-90 backdrop-blur-sm dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)] rounded-xl py-10 px-10">
+      class="flex w-full flex-col bg-opacity-80 backdrop-blur-sm dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)] rounded-xl py-10 px-10">
       <!-- tags list -->
       <div class="flex justify-left items-center flex-wrap md:mx-10 md:gap-3 gap-2">
         <span v-for="(num, tag) in tagsMap" :key="tag" class=" px-2 rounded-sm cursor-pointer border"

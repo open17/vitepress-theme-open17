@@ -9,7 +9,9 @@ export const LOCALIZED_STRINGS = {
     all: '全部',
     posts: '文章',
     tags: '标签',
-    category: '分类'
+    category: '分类',
+    switchToNormalPage: '切换到普通页面',
+    switchToPostPage: '切换到文章页面',
   },
   'en': {
     prev: 'Prev',
@@ -17,7 +19,9 @@ export const LOCALIZED_STRINGS = {
     all: 'All',
     posts: 'POSTS',
     tags: 'TAGS',
-    category: 'Category'
+    category: 'Category',
+    switchToNormalPage: 'Switch to Normal Page',
+    switchToPostPage: 'Switch to Post Page',
   }
 } as const;
 

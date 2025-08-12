@@ -1,6 +1,6 @@
 <template>
     <!-- giscus评论 -->
-    <div class="comment mt-5" v-if="useComment && refreshFlag">
+    <div class="comment mt-5 opacity-80" v-if="useComment && refreshFlag">
         <Giscus v-if="CommentConfig" :repo="CommentConfig.repo" :repo-id="CommentConfig.repoId"
             :category="CommentConfig.category" :category-id="CommentConfig.categoryId" :mapping="CommentConfig.mapping"
             :strict="CommentConfig.strict" :reactions-enabled="CommentConfig.reactionsEnabled"

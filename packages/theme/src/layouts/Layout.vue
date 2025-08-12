@@ -4,17 +4,34 @@
     <div id="Loading" v-if="isLoading"></div>
   </Transition>
 
+  <!-- 切换按钮 -->
+  <div class="fixed top-20 right-5 z-50" v-if="isPostPage">
+
+    <button 
+      @click="togglePostPage" 
+      class="layout-toggle-btn"
+      :title="switchPageStyle ? getLocalizedString('switchToNormalPage', lang) : getLocalizedString('switchToPostPage', lang)"
+    >
+      <svg v-if="switchPageStyle" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      </svg>
+    </button>
+  </div>
+
   <!-- 文章详情页使用带侧边栏布局 -->
-  <div v-if="isPostPage" class="post-page bg-no-repeat bg-center bg-fixed bg-cover" :class="{ loadingStyle: isLoading }"
+  <div v-if="isPostPage && switchPageStyle" class="post-page bg-no-repeat bg-center bg-fixed bg-cover" :class="{ loadingStyle: isLoading }"
        :style="bgImg ? { 'background-image': `url(${bgImg})` } : {}">
     <div class="w-full flex justify-center">
       <div class="flex w-full max-w-screen-2xl justify-center items-start pt-0 my-0 gap-5 md:px-20 flex-col-reverse md:flex-row">
         <!-- 文章详情页侧边栏 -->
-        <div class="hidden h-screen md:flex bg-transparent w-full md:w-1/4 justify-start items-start py-16 mt-10 md:mt-16 flex-col gap-5">
+        <div class=" sticky top-5 hidden h-screen md:flex bg-transparent w-full md:w-1/4 justify-start items-start py-16 mt-5 md:mt-5 flex-col gap-5">
           <div class=" flex flex-col gap-5 w-full">
             <!-- 电脑端个人信息 -->
             <UserCard :isMobile="false" />
-            <div class="flex w-full md:rounded-xl px-5 py-5 flex-col justify-start dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)]">
+            <div class=" h-48 overflow-auto opacity-85 backdrop-blur-md flex w-full md:rounded-xl px-5 py-5 flex-col justify-start dark:shadow-none shadow-md border-2 border-[var(--blog-border-c)] bg-[var(--vp-c-blog-bg)]">
               <VPDocAsideOutline />
             </div>
             <!-- 分类 -->
@@ -105,7 +122,13 @@ const isBlogTop = ref<boolean>(frontmatter.value.layout === 'blog');
 const bgImg = ref<string | null>(null);
 const route = useRoute();
 
+
 const isPostPage = computed(() => route.path.startsWith('/posts/'));
+const switchPageStyle = ref<boolean>(true);
+
+const togglePostPage = () => {
+  switchPageStyle.value = !switchPageStyle.value;
+};
 
 // 导入分类和标签功能
 // const { tagsMap, activeTag, getTagArray } = useTags();
@@ -218,6 +241,9 @@ const getBgImg = (): string | null => {
      display: none !important;
    }
   }
+  .post-page .VPFooter {
+     display: none !important;
+   }
  
  /* 移动端：移除博客详情页顶部与左右间距 */
  @media (max-width: 767px) {
@@ -228,3 +254,29 @@ const getBgImg = (): string | null => {
    }
  }
  </style>
+
+<style scoped>
+.layout-toggle-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--vp-c-brand-1);
+  color: var(--vp-c-white);
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.layout-toggle-btn:hover {
+  background-color: var(--vp-c-brand-2);
+  transform: scale(1.05);
+}
+
+.layout-toggle-btn:active {
+  transform: scale(0.95);
+}
+</style>
