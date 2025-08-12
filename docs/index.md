@@ -10,8 +10,8 @@ hero:
   text: "简单美观的博客主题"
   tagline: 将 Markdown 变成美观的博客，只需几分钟
   image:
-    dark: "/vitepress-logo.png"
-    light: "/vitepress-logo.png"
+    dark: "/banner.png"
+    light: "/banner.png"
     alt: open17
   actions:
     - theme: brand

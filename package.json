@@ -16,7 +16,7 @@
     "markdown-it-mathjax3": "^4.3.2",
     "vite": "^5.2.14",
     "vitepress-sidebar": "^1.22.0",
-    "vitepress-theme-open17": "^1.3.5",
+    "vitepress-theme-open17": "^1.3.6",
     "vue": "^3.4.21"
   }
 }
