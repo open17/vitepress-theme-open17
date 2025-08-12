@@ -19,7 +19,7 @@
 </a>
 <br>
 <a href="https://vitepress.open17.vip/guide/0-intro/">📚 文档</a> · 
-<a href="https://vitepress.open17.vip/page/demo.html">🚀 演示</a> 
+<a href="https://vitepress.open17.vip/page/blog.html">🚀 演示</a> 
 </div>
 
 ---
@@ -96,7 +96,7 @@ npm create open17-blog my-blog
   
 **现代化设计 · 优雅的阅读体验**
 
-[🎯 查看在线演示](https://vitepress.open17.vip/page/demo.html)
+[🎯 查看在线演示](https://vitepress.open17.vip/page/blog.html)
 
 </div>
 
