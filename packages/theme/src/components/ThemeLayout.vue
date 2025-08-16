@@ -1,6 +1,6 @@
 <script setup>
 import { useData } from 'vitepress';
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import IconMore from './icon/IconMore.vue';
 import UserCard from './UserCard.vue';
 import WidgetCard from './WidgetCard.vue';
@@ -18,11 +18,44 @@ const { theme, lang } = useData();
 const blogConfig = theme.value.blog;
 const direct = blogConfig.direct || 'lft';
 
-const { tagsMap, activeTag, getTagArray } = useTags();
-const { categoriesMap, activeCategory, getCategoryArray } = useCategories();
+
+const { tagsMap, activeTag, getTagArray, filterPostsByActiveTag } = useTags();
+const { categoriesMap, activeCategory, getCategoryArray, filterPostsByActiveCategory, getCategoryFromUrl } = useCategories();
 
 const maxTagsDisplayed = computed(() => theme.value.home?.maxTagsDisplayed);
 const allText = computed(() => getLocalizedString('all', lang.value));
+
+watch(
+  activeCategory,
+  (newCat) => {
+    if (!activeTag.value) return; 
+    const postsInCategory = filterPostsByActiveCategory(newCat);
+    const tagExistsInCategory = postsInCategory.some(
+      (p) => p.frontmatter.tags && p.frontmatter.tags.includes(activeTag.value)
+    );
+    if (!tagExistsInCategory) {
+      activeTag.value = ''; 
+    }
+  },
+  { immediate: true }
+);
+
+
+watch(
+  activeTag,
+  (newTag) => {
+    if (!activeCategory.value) return; 
+    if (!newTag) return; 
+    const postsWithTag = filterPostsByActiveTag(newTag);
+    const categoryExistsForTag = postsWithTag.some(
+      (p) => getCategoryFromUrl(p.url) === activeCategory.value
+    );
+    if (!categoryExistsForTag) {
+      activeCategory.value = '';
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
